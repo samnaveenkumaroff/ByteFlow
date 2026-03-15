@@ -1,7 +1,7 @@
-# ByteFlow Mart⚡ PriceRadar — Agentic Competitive Intelligence for Indian E-Commerce
+# ⚡ ByteFlow Mart — PriceRadar  
+## 🧠 Agentic Competitive Intelligence for Indian E-Commerce
 
-> **ByteFlow Mart** · Problem Statement **PS D 3**
-> 
+> **ByteFlow Mart** · Problem Statement **PS D-3**
 Sellers have hit a competitive intelligence wall where the sheer
 velocity of cross-platform pricing shifts, sentiment nuances in
 thousands of reviews, and shifting competitor tactics has outpaced
@@ -10,8 +10,7 @@ lacks the autonomous reasoning to connect disparate signals—like a
 specific material complaint in a reviewto a pricing drop in a
 rival'scatalog. This creates a strategic blind spot that requiresan
 agentic layerto independently monitor,synthesize, and proactively
-suggest pivot strategies before market opportunities evaporate
-
+suggest pivot strategies before market opportunities evaporate.
 <p align="center">
   <img src="https://img.shields.io/badge/PS-D_3-FFD700?style=for-the-badge&labelColor=0d1117" />
   <img src="https://img.shields.io/badge/LLM-Qwen3--8B--Instruct-7C3AED?style=for-the-badge&labelColor=0d1117" />
@@ -32,43 +31,47 @@ suggest pivot strategies before market opportunities evaporate
 
 ## 🚀 Overview
 
-**PriceRadar** is a local-first, privacy-preserving, agentic competitive intelligence platform for Indian e-commerce sellers.
+**PriceRadar** is a local-first, privacy-preserving, agentic competitive intelligence platform designed for Indian e-commerce sellers.
 
-It autonomously monitors competitor listings across major marketplaces, analyzes pricing gaps, delivery advantages, discounts, and review sentiment, and produces **priority-ranked, one-click actionable strategies** powered by a hybrid rule engine and on-device LLM — without sending any seller data to external APIs.
+It autonomously monitors competitor listings across major marketplaces, analyzes pricing gaps, delivery advantages, discounts, and review sentiment, and generates **priority-ranked, one-click actionable strategies** using a hybrid rule engine and on-device Large Language Model (LLM).
+
+🔒 No seller data leaves the machine.  
+⚡ No external API dependency.  
+🧠 Real-time strategic intelligence.
 
 ---
 
 ## 📋 Table of Contents
 
-- [Problem Statement — PS D 3](#problem-statement--ps-d-3)
+- [Problem Statement — PS D-3](#problem-statement--ps-d-3)
 - [What Is PriceRadar?](#what-is-priceradar)
 - [Full Workflow](#full-workflow)
 - [System Architecture](#system-architecture)
 - [Why This Approach](#why-this-approach)
-- [Why Qwen3-8B-Instruct — LLM Benchmark Comparison](#why-qwen3-8b-instruct--llm-benchmark-comparison)
-- [How We Use Qwen3-8B-Instruct](#how-we-use-qwen3-8b-instruct)
+- [LLM Selection — Qwen3-8B-Instruct](#llm-selection--qwen3-8b-instruct)
+- [How the LLM Is Used](#how-the-llm-is-used)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
 - [Local Setup](#local-setup-without-docker)
-- [Docker Deployment](#docker--development-mode)
+- [Docker Deployment](#docker-deployment)
 - [API Reference](#api-reference)
 - [Dataset](#dataset)
 - [License](#license)
 
 ---
 
-## Problem Statement — PS D 3
+## Problem Statement — PS D-3
 
-Sellers face a **competitive intelligence overload** where rapid cross-platform price shifts, delivery advantages, and sentiment signals exceed human monitoring capacity.
+Sellers have hit a **competitive intelligence wall** where the velocity of cross-platform price changes, delivery competition, discount wars, and sentiment signals has exceeded human analytical capacity.
 
-Traditional scraping tools provide raw data but lack reasoning capability to connect signals — such as:
+Traditional scraping tools provide raw data but lack reasoning ability to connect signals — for example:
 
-- A price drop triggered by negative reviews
-- Delivery advantage driving conversion shifts
-- Discount wars across platforms
-- Feature complaints influencing demand
+- Price drops triggered by negative reviews  
+- Faster delivery influencing conversion rates  
+- Discount battles across marketplaces  
+- Feature complaints impacting demand  
 
-This creates a strategic blind spot requiring an **agentic layer that proactively recommends actions before revenue loss occurs.**
+This creates a strategic blind spot requiring an **agentic layer that continuously monitors, synthesizes, and proactively recommends actions before revenue loss occurs.**
 
 ---
 
@@ -81,10 +84,10 @@ PriceRadar is a full-stack competitive intelligence system that:
 ✔ Computes market gaps and trends  
 ✔ Analyzes review sentiment  
 ✔ Generates actionable strategies  
-✔ Applies updates with one click  
-✔ Works fully offline with local AI  
+✔ Applies optimizations with one click  
+✔ Operates fully offline with local AI  
 
-Supported platforms:
+### Supported Platforms
 
 - Flipkart  
 - Amazon  
@@ -95,30 +98,57 @@ Supported platforms:
 ---
 
 ## Full Workflow
-Seller Input → Scraping → Matching → Market Analysis →
-Strategy Generation → LLM Advisory → Seller Action →
-Monitoring → Alerts → One-Click Update
+
+Seller Input
+↓
+Automated Scraping
+↓
+Product Matching
+↓
+Market Analysis
+↓
+Strategy Generation (Rule Engine)
+↓
+LLM Strategic Advisory
+↓
+Seller Decision / One-Click Apply
+↓
+Continuous Monitoring
+↓
+Alerts & Re-Optimization
 
 
-Key outputs:
+### Key Outputs
 
-- Optimized pricing recommendations
-- Delivery improvements
-- Promotional strategies
-- Competitive positioning insights
-- Automated update suggestions
+- Optimal pricing recommendations  
+- Delivery improvements  
+- Promotion strategies  
+- Competitive positioning insights  
+- Automated update suggestions  
 
 ---
 
 ## System Architecture
 
-### Core Components
+### Core Pipeline
 
-Frontend → FastAPI Backend → Strategy Engine → LLM → Data Layer → Scraper → Scheduler
+Frontend → FastAPI Backend → Strategy Engine → LLM Layer
+→ Data Storage → Scraper → Scheduler
 
-**Rule Engine:** Deterministic logic for instant decisions  
-**LLM Layer:** Context-aware strategic reasoning  
-**Scheduler:** Autonomous 24-hour monitoring loop  
+
+### Components
+
+**Rule Engine**  
+Deterministic logic for instant, reliable actions.
+
+**LLM Layer**  
+Context-aware reasoning and strategic insight.
+
+**Scheduler**  
+Autonomous 24-hour monitoring loop.
+
+**Data Layer**  
+Lightweight JSON storage for portability.
 
 ---
 
@@ -131,80 +161,124 @@ Pure rule systems cannot handle novel situations.
 
 PriceRadar combines both:
 
-| Feature | Rule Engine | LLM | Hybrid |
-|----------|------------|------|--------|
+| Capability | Rule Engine | LLM | Hybrid |
+|------------|------------|------|--------|
 Speed | ⚡ Instant | Slow | Fast |
 Reliability | High | Variable | High |
 Reasoning | Low | High | High |
-Offline | Yes | No | Yes |
+Offline Capability | Yes | No | Yes |
 Explainability | High | Medium | High |
 
+Result: **Deterministic core + intelligent advisory layer**
+
 ---
 
-## Why Qwen3-8B-Instruct — LLM Benchmark Comparison
+## LLM Selection — Qwen3-8B-Instruct
 
-Selected for:
+Chosen for:
 
-- Strong instruction following
-- High numerical reasoning accuracy
-- Local inference capability
-- Apache 2.0 license
-- CPU-friendly quantized deployment
-- No external API dependency
+- Excellent instruction adherence  
+- Strong numerical reasoning  
+- CPU-friendly quantized deployment  
+- Fully offline inference  
+- Apache 2.0 license  
+- No external API requirement  
 
-Runs via Ollama:
+### Model Variant
 
+Qwen3-8B-Instruct Q4-K-M (Quantized)
+
+
+### Run via Ollama
+
+```bash
 ollama pull qcwind/qwen3-8b-instruct-Q4-K-M
+ollama serve
 
+## 🧠 How the LLM Is Used
 
----
+The LLM acts as a **strategic advisor — not the decision engine.**
 
-## How We Use Qwen3-8B-Instruct
+### Primary Roles
 
-The LLM acts as a strategic advisor, not a decision maker.
+- Explaining strategy recommendations  
+- Interpreting review sentiment  
+- Suggesting competitive positioning  
+- Providing marketing insights  
+- Highlighting risks and opportunities  
 
-### Use Cases
-
-1. Strategy explanation based on market data  
-2. Insights from review sentiment  
-3. Competitive positioning suggestions  
-4. Marketing ideas grounded in evidence  
-
-All core actions remain deterministic for reliability.
-
----
-
-## Tech Stack
-
-| Layer | Technology |
-|--------|------------|
-Backend | FastAPI |
-LLM Runtime | Ollama |
-Model | Qwen3-8B-Instruct |
-Scraping | Playwright |
-Scheduler | Python schedule |
-Storage | JSON files |
-Frontend | Streamlit / Static Web |
-Containerization | Docker |
-Language | Python 3.11+ |
+All operational actions remain **deterministic for reliability**, ensuring consistent system behavior even if the LLM is unavailable.
 
 ---
 
-## Project Structure
+## 🛠 Tech Stack
+
+### Frontend
+
+- HTML / CSS / JavaScript  
+- Streamlit Dashboard  
+
+### Backend
+
+- FastAPI  
+- Uvicorn  
+- Python 3.11+  
+
+### AI / LLM Layer
+
+- Qwen3-8B-Instruct (Q4-K-M quantized model)  
+- Ollama — local LLM runtime  
+
+### Scraping
+
+- Playwright — headless browser scraping  
+- Chromium Engine — executes JavaScript and waits for DOM  
+- Extraction from JS-rendered pages  
+
+#### Platforms Scraped
+
+- Flipkart  
+- Amazon  
+- Croma  
+- Reliance Digital  
+- Vijay Sales  
+
+### Automation
+
+- `schedule` — 24-hour autonomous monitoring loop  
+- Alert system for price and discount changes  
+
+### Data Storage
+
+Lightweight JSON flat files for portability and zero external dependencies.
+
+#### Examples
+
+- Products  
+- Orders  
+- Users  
+- Competitor data  
+- Bundles  
+- Seller profile  
+
+---
+
+## 📁 Project Structure
+
 project/
-├── ai/
-├── strategy/
-├── scraper/
-├── scheduler/
-├── data/
-├── dashboard.py
-├── server.py
+├── ai/ # LLM modules
+├── strategy/ # Rule engine & apply logic
+├── scraper/ # Competitor scraping
+├── scheduler/ # Autonomous monitoring
+├── data/ # JSON datasets
+├── dashboard.py # Strategy dashboard
+├── server.py # FastAPI backend
 ├── requirements.txt
 
 
 ---
 
-## Local Setup (Without Docker)
+## ⚙️ Local Setup (Without Docker)
 
 ### Prerequisites
 
@@ -213,63 +287,75 @@ project/
 
 ### Installation
 
-git clone <repo>
+```bash
+git clone <repository-url>
 cd priceradar
 pip install -r requirements.txt
 pip install playwright
 playwright install chromium
 
 
-### Pull Model
+---
 
-ollama pull qcwind/qwen3-8b-instruct-Q4-K-M
-ollama serve
+## ⚙️ Local Setup (Without Docker)
 
+### Prerequisites
 
-### Run Application
+- Python 3.11+
+- Ollama installed
 
-python server.py
+### Installation
+
+```bash
+git clone <repository-url>
+cd priceradar
+pip install -r requirements.txt
+pip install playwright
+playwright install chromium
 
 
 ---
 
-## Docker — Development Mode
+## ⚙️ Local Setup (Without Docker)
 
+### Prerequisites
+
+- Python 3.11+
+- Ollama installed
+
+### Installation
+
+```bash
+git clone <repository-url>
+cd priceradar
+pip install -r requirements.txt
+pip install playwright
+playwright install chromium
+
+🐳 Docker Deployment
+Development Mode
 docker compose --profile dev up --build
 
----
-
-## API Reference
-
-### Seller
-
-GET `/api/seller/products` — List products  
-POST `/api/seller/analyze` — Analyze competition  
-POST `/api/seller/alerts/scan-all` — Run monitoring  
-POST `/api/seller/alerts/ai-strategy/{pid}` — Generate AI insights  
-
-### Strategy Dashboard
-
-GET `/api/strategy/data` — Market dataset  
-POST `/api/strategy/apply-all` — Apply optimizations  
-POST `/api/strategy/reset` — Restore original data  
-
----
-
-## Dataset
+📡 API Reference
+Seller APIs
+Endpoint	Description
+GET /api/seller/products	List products
+POST /api/seller/analyze	Analyze competition
+POST /api/seller/alerts/scan-all	Run monitoring
+POST /api/seller/alerts/ai-strategy/{pid}	Generate AI insights
+Strategy Dashboard APIs
+Endpoint	Description
+GET /api/strategy/data	Market dataset
+POST /api/strategy/apply-all	Apply optimizations
+POST /api/strategy/reset	Restore original data
+📊 Dataset
 
 5 flagship smartphones × 5 platforms × 10 reviews each
 
-Total: **250 real review samples**
+Total: 250 real review samples
 
----
-
-## License
+📄 License
 
 CIT License — free for academic and commercial use.
 
----
-
-<p align="center">
-Built with ⚡ for PS D 3 · PriceRadar by ByteFlow Mart
-</p>
+<p align="center"> ⚡ Built for PS D-3 · PriceRadar by ByteFlow Mart </p> ```
