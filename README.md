@@ -190,7 +190,7 @@ Qwen3-8B-Instruct Q4-K-M (Quantized)
 
 ### Run via Ollama
 
-```bash
+bash
 ollama pull qcwind/qwen3-8b-instruct-Q4-K-M
 ollama serve
 
@@ -286,7 +286,7 @@ project/
 
 ### Installation
 
-```bash
+bash
 git clone <repository-url>
 cd priceradar
 pip install -r requirements.txt
@@ -305,7 +305,7 @@ playwright install chromium
 
 ### Installation
 
-```bash
+bash
 git clone <repository-url>
 cd priceradar
 pip install -r requirements.txt
@@ -324,7 +324,7 @@ playwright install chromium
 
 ### Installation
 
-```bash
+bash
 git clone <repository-url>
 cd priceradar
 pip install -r requirements.txt
