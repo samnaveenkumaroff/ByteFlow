@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ByteFlow Mart — Seller</title>
+<link rel="stylesheet" href="/static/shared.css">
+<style>
+/* ── Seller-specific styles ── */
+.product-row{display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap;}
+.product-row-img{width:78px;height:78px;object-fit:contain;border-radius:8px;
+  background:var(--navy-mid);padding:.4rem;border:1px solid var(--border);flex-shrink:0;}
+.product-row-info{flex:1;min-width:0;}
+.product-row-name{font-weight:700;font-size:.95rem;color:var(--text-1);}
+.product-row-meta{font-size:.73rem;color:var(--text-3);margin:.2rem 0 .45rem;}
+.product-row-price{font-size:1.2rem;font-weight:800;color:var(--gold);}
+.product-row-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.65rem;}
+.attr-section{margin:.75rem 0;}
+.attr-group{margin-bottom:.9rem;}
+.attr-group-title{font-size:.78rem;font-weight:700;color:var(--text-2);
+  text-transform:uppercase;letter-spacing:.5px;margin-bottom:.4rem;}
+.ai-output{background:var(--navy-mid);border:1px solid var(--border);
+  border-left:3px solid var(--gold);border-radius:var(--radius);
+  padding:1rem 1.2rem;font-size:.875rem;color:var(--text-2);line-height:1.78;
+  animation:slideUp .3s ease;white-space:pre-wrap;}
+.price-compare{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin:.75rem 0;}
+.price-box{background:var(--navy-mid);border:1px solid var(--border);
+  border-radius:var(--radius);padding:.75rem 1rem;text-align:center;}
+.price-box-lbl{font-size:.68rem;color:var(--text-3);text-transform:uppercase;
+  letter-spacing:.5px;margin-bottom:.25rem;}
+.price-box-val{font-size:1.2rem;font-weight:800;color:var(--gold);}
+.edit-inline{display:none;background:var(--navy-mid);border:1px solid var(--border);
+  border-radius:var(--radius);padding:1rem;margin-top:.5rem;animation:slideUp .25s ease;}
+.edit-inline.open{display:block;}
+.strat-item{display:flex;align-items:flex-start;gap:1rem;padding:1rem;
+  background:var(--navy-mid);border:1px solid var(--border);border-radius:var(--radius);
+  margin-bottom:.5rem;transition:var(--t);}
+.strat-item:hover{border-color:var(--gold-dim);background:var(--navy-raised);}
+.strat-pid{font-size:.7rem;color:var(--text-3);font-weight:600;}
+.profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.profile-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="sidebar-logo-icon">⚡</div>
+      <div class="sidebar-logo-name">ByteFlow Mart</div>
+      <div class="sidebar-logo-sub">Seller Dashboard</div>
+    </div>
+    <div class="nav-section">Manage</div>
+    <div class="nav-item active" data-page="products" onclick="showPage('products')">
+      <span class="icon">📦</span> My Products
+    </div>
+    <div class="nav-item" data-page="add" onclick="showPage('add')">
+      <span class="icon">➕</span> Add New Product
+    </div>
+    <div class="nav-item" data-page="alerts" onclick="showPage('alerts')">
+      <span class="icon">🔔</span> Competitor Alerts
+      <span class="nav-badge" id="nav-alert-count" style="display:none;">0</span>
+    </div>
+    <div class="nav-section">Intelligence</div>
+    <div class="nav-item" data-page="strategy" onclick="showPage('strategy')">
+      <span class="icon">📊</span> Strategy Dashboard
+    </div>
+    <div class="nav-section">Account</div>
+    <div class="nav-item" data-page="profile" onclick="showPage('profile')">
+      <span class="icon">👤</span> Seller Profile
+    </div>
+    <div class="sidebar-bottom" id="sidebar-user"></div>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main class="main-content" id="main-content">
+    <div id="page-products"></div>
+    <div id="page-add" style="display:none;"></div>
+    <div id="page-alerts" style="display:none;"></div>
+    <div id="page-strategy" style="display:none;"></div>
+    <div id="page-profile" style="display:none;"></div>
+  </main>
+</div>
+
+<script src="/static/shared.js"></script>
+<script>
+// ══════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════
+const user = requireAuth('seller');
+renderSidebarUser(user);
+let currentPage = 'products';
+
+function showPage(page) {
+  document.querySelectorAll('.nav-item').forEach(n =>
+    n.classList.toggle('active', n.dataset.page === page));
+  ['products','add','alerts','strategy','profile'].forEach(p => {
+    document.getElementById('page-' + p).style.display = p === page ? 'block' : 'none';
+  });
+  currentPage = page;
+  // Load page content
+  const loaders = { products: loadProducts, add: loadAdd,
+    alerts: loadAlerts, strategy: loadStrategy, profile: loadProfile };
+  if (loaders[page]) loaders[page]();
+}
+
+// Auto-load on start
+loadProducts();
+loadAlertBadge();
+
+// ══════════════════════════════════════════
+// HELPERS
+// ══════════════════════════════════════════
+function fmtPrice(n) { return '₹' + Number(n).toLocaleString('en-IN'); }
+function fmtDate(s) { return s ? s.slice(0,10) : '—'; }
+
+async function loadAlertBadge() {
+  try {
+    const d = await api('/api/seller/alerts');
+    const count = d.products.reduce((s,p) => s + p.alerts.length, 0);
+    const el = document.getElementById('nav-alert-count');
+    el.textContent = count;
+    el.style.display = count ? 'inline' : 'none';
+  } catch(e) {}
+}
+
+// ══════════════════════════════════════════
+// PAGE: MY PRODUCTS
+// ══════════════════════════════════════════
+async function loadProducts() {
+  const el = document.getElementById('page-products');
+  el.innerHTML = `<div class="skeleton" style="height:200px;margin-bottom:1rem;"></div>`;
+  try {
+    const data = await api('/api/seller/products');
+    const products = data.products || [];
+    const totalStock = products.reduce((s,p) => s + (p.stock||0), 0);
+    const avgPrice   = products.length ? Math.round(products.reduce((s,p) => s + p.our_price, 0) / products.length) : 0;
+    const alerts     = products.reduce((s,p) => s + (p.alerts||[]).length, 0);
+
+    el.innerHTML = `
+    <div class="page-header anim">
+      <h1>📦 My Products</h1>
+      <p>Manage your active listings on ByteFlow Mart</p>
+    </div>
+
+    <div class="metrics">
+      <div class="metric-card anim"><div class="metric-val" data-target="${products.length}">${products.length}</div><div class="metric-lbl">Total Products</div></div>
+      <div class="metric-card anim-1"><div class="metric-val" data-target="${totalStock}">${totalStock}</div><div class="metric-lbl">Total Stock</div></div>
+      <div class="metric-card anim-2"><div class="metric-val" data-prefix="₹" data-target="${avgPrice}">₹${avgPrice.toLocaleString('en-IN')}</div><div class="metric-lbl">Avg Price</div></div>
+      <div class="metric-card anim-3"><div class="metric-val" data-target="${alerts}" style="color:${alerts?'var(--red)':'var(--green)'}">${alerts}</div><div class="metric-lbl">Open Alerts</div></div>
+    </div>
+
+    <div style="display:flex;gap:.75rem;margin-bottom:1rem;flex-wrap:wrap;">
+      <input type="text" id="prod-search" placeholder="🔍 Search products..."
+        style="flex:1;min-width:180px;background:var(--navy-card);border:1px solid var(--border);
+               border-radius:8px;padding:.5rem .85rem;color:var(--text-1);font-family:Inter,sans-serif;
+               font-size:.875rem;outline:none;"
+        oninput="filterProducts()" />
+      <select id="prod-sort" onchange="filterProducts()"
+        style="background:var(--navy-card);border:1px solid var(--border);border-radius:8px;
+               padding:.5rem .85rem;color:var(--text-1);font-family:Inter,sans-serif;font-size:.875rem;outline:none;">
+        <option>Newest</option><option>Price ↑</option><option>Price ↓</option><option>Stock ↑</option>
+      </select>
+    </div>
+
+    <div id="products-list"></div>`;
+
+    window._productsData = products;
+    filterProducts();
+    animateCounters();
+  } catch(e) {
+    el.innerHTML = renderAlert('Failed to load products: ' + e.message, 'error');
+  }
+}
+
+function filterProducts() {
+  const search = (document.getElementById('prod-search')?.value || '').toLowerCase();
+  const sort   = document.getElementById('prod-sort')?.value || 'Newest';
+  let list = [...(window._productsData || [])];
+  if (search) list = list.filter(p => p.product_name.toLowerCase().includes(search));
+  if (sort === 'Price ↑')  list.sort((a,b) => a.our_price - b.our_price);
+  if (sort === 'Price ↓')  list.sort((a,b) => b.our_price - a.our_price);
+  if (sort === 'Stock ↑')  list.sort((a,b) => (a.stock||0) - (b.stock||0));
+
+  const el = document.getElementById('products-list');
+  if (!el) return;
+  if (!list.length) { el.innerHTML = `<div class="card" style="text-align:center;padding:2rem;color:var(--text-3);">No products found</div>`; return; }
+
+  el.innerHTML = list.map(p => {
+    const alertBadge = p.alerts?.length
+      ? `<span class="badge badge-red badge-pulse" style="cursor:pointer;" onclick="showPage('alerts')">⚠ ${p.alerts.length}</span>` : '';
+    return `
+    <div class="card anim" id="prod-card-${p.id}">
+      <div class="product-row">
+        <img class="product-row-img" src="${p.image_url||''}"
+             onerror="this.src='https://placehold.co/78x78/101f3a/c9a84c?text=📱'">
+        <div class="product-row-info">
+          <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;">
+            <span class="product-row-name">${p.product_name}</span>
+            ${alertBadge} ${stockBadge(p.stock||0)}
+          </div>
+          <div class="product-row-meta">
+            ${p.id} · ${p.category||'—'} · Checked: ${fmtDate(p.last_checked)}
+          </div>
+          <div style="display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;">
+            <div>
+              <span class="product-row-price">${fmtPrice(p.our_price)}</span>
+              <span style="font-size:.75rem;color:var(--text-3);text-decoration:line-through;margin-left:.35rem;">
+                ${fmtPrice(p.original_price||0)}
+              </span>
+              <span class="badge badge-green" style="margin-left:.35rem;">${p.discount||0}% off</span>
+            </div>
+            <div style="font-size:.8rem;color:var(--text-2);">
+              ⭐ ${p.rating||0} &nbsp;·&nbsp; 🚚 ${p.delivery_days||0}d
+              &nbsp;·&nbsp; <span style="color:var(--text-3);">retail ${fmtPrice(p.retail_price||0)}</span>
+            </div>
+          </div>
+          <div class="product-row-actions">
+            <button class="btn btn-outline btn-sm" onclick="toggleDetails('${p.id}')">👁 Details</button>
+            <button class="btn btn-outline btn-sm" onclick="editProduct('${p.id}')">✏ Edit</button>
+            <button class="btn btn-outline btn-sm" onclick="scanProduct('${p.id}', this)">🔍 Scan</button>
+            <button class="btn btn-danger btn-sm" onclick="confirmDelete('${p.id}','${p.product_name.replace(/'/g,"\\'")}')">🗑 Remove</button>
+          </div>
+        </div>
+      </div>
+      <div class="edit-inline" id="detail-${p.id}">
+        <div class="tabs" id="tabs-${p.id}">
+          <div class="tab active" data-tab="dt-info-${p.id}">📄 Info</div>
+          <div class="tab" data-tab="dt-comp-${p.id}">🏬 Competitors</div>
+          <div class="tab" data-tab="dt-bun-${p.id}">🎁 Bundles</div>
+        </div>
+        <div class="tab-content active" id="dt-info-${p.id}">
+          <table class="spec-table">
+            <tr><td>Title</td><td>${p.title||p.product_name}</td></tr>
+            <tr><td>Description</td><td style="color:var(--text-2);line-height:1.6;">${p.description||'—'}</td></tr>
+            <tr><td>Price</td><td style="color:var(--gold);font-weight:800;">${fmtPrice(p.our_price)}</td></tr>
+            <tr><td>Retail Price</td><td>${fmtPrice(p.retail_price||0)}</td></tr>
+            <tr><td>Discount</td><td><span class="badge badge-green">${p.discount||0}% off</span></td></tr>
+            <tr><td>Stock</td><td>${p.stock||0} units</td></tr>
+            <tr><td>Delivery</td><td>🚚 ${p.delivery_days||0} days</td></tr>
+          </table>
+        </div>
+        <div class="tab-content" id="dt-comp-${p.id}">
+          <div id="comp-list-${p.id}"><div style="color:var(--text-3);font-size:.84rem;">Loading competitors...</div></div>
+        </div>
+        <div class="tab-content" id="dt-bun-${p.id}">
+          <div id="bun-list-${p.id}"><div style="color:var(--text-3);font-size:.84rem;">Loading bundles...</div></div>
+        </div>
+      </div>
+    </div>`; }).join('');
+
+  // Init tabs for each product
+  list.forEach(p => {
+    document.querySelectorAll(`#tabs-${p.id} .tab`).forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll(`#tabs-${p.id} .tab`).forEach(t => t.classList.remove('active'));
+        document.querySelectorAll(`#prod-card-${p.id} .tab-content`).forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+        // Load on first open
+        if (tab.dataset.tab.startsWith('dt-comp-')) loadProductDetail(p.id, 'comp');
+        if (tab.dataset.tab.startsWith('dt-bun-'))  loadProductDetail(p.id, 'bun');
+      });
+    });
+  });
+  initRipple('.btn');
+}
+
+function toggleDetails(pid) {
+  const el = document.getElementById('detail-' + pid);
+  const isOpen = el.classList.contains('open');
+  el.classList.toggle('open', !isOpen);
+  if (!isOpen) loadProductDetail(pid, 'comp');
+}
+
+async function loadProductDetail(pid, type) {
+  if (type === 'comp') {
+    const el = document.getElementById(`comp-list-${pid}`);
+    if (!el || el.dataset.loaded) return;
+    el.dataset.loaded = '1';
+    try {
+      const d = await api(`/api/customer/product/${pid}`);
+      // Use compe data from strategy endpoint for competitors
+      const sd = await api('/api/strategy/data');
+      const match = sd.data.matches?.find(m => m.our_product_id === pid);
+      if (match?.competitors?.length) {
+        const p = window._productsData?.find(x => x.id === pid);
+        el.innerHTML = match.competitors.map(c => renderCompetitorRow(c, p?.our_price || 0)).join('');
+      } else {
+        el.innerHTML = renderAlert('No competitor data matched.','info');
+      }
+    } catch(e) { el.innerHTML = renderAlert('Error: '+e.message,'error'); }
+  }
+  if (type === 'bun') {
+    const el = document.getElementById(`bun-list-${pid}`);
+    if (!el || el.dataset.loaded) return;
+    el.dataset.loaded = '1';
+    try {
+      const d = await api(`/api/customer/product/${pid}`);
+      if (d.bundles?.length) {
+        el.innerHTML = d.bundles.map(b => renderBundleCard(b)).join('');
+      } else {
+        el.innerHTML = renderAlert('No bundle offers for this product.','info');
+      }
+    } catch(e) { el.innerHTML = renderAlert('Error: '+e.message,'error'); }
+  }
+}
+
+async function scanProduct(pid, btn) {
+  btn.disabled = true; btn.textContent = '...';
+  try {
+    const d = await api(`/api/seller/alerts/scan/${pid}`, 'POST');
+    if (d.changes?.length) {
+      toast(`⚠ ${d.changes.length} change(s) detected!`, 'warn');
+      loadAlertBadge();
+    } else {
+      toast('✅ No significant changes.', 'success');
+    }
+    loadProducts();
+  } catch(e) { toast('Scan failed: '+e.message,'error'); }
+  finally { btn.disabled=false; btn.textContent='🔍 Scan'; }
+}
+
+function confirmDelete(pid, name) {
+  openModal(
+    '🗑 Remove Product',
+    `<p style="color:var(--text-2);">Remove <b style="color:var(--text-1);">${name}</b> permanently?</p>`,
+    `<button class="btn btn-outline" onclick="closeModal()">Cancel</button>
+     <button class="btn btn-danger" onclick="deleteProduct('${pid}')">Yes, Remove</button>`
+  );
+}
+async function deleteProduct(pid) {
+  try {
+    await api(`/api/seller/products/${pid}`, 'DELETE');
+    closeModal(); toast('Product removed.','success'); loadProducts();
+  } catch(e) { toast('Error: '+e.message,'error'); }
+}
+
+function editProduct(pid) {
+  const p = window._productsData?.find(x => x.id === pid);
+  if (!p) return;
+  openModal('✏️ Edit Product', `
+    <div class="field"><label>Product Name</label>
+      <input type="text" id="e-name" value="${p.product_name}"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
+      <div class="field"><label>Price (₹)</label>
+        <input type="number" id="e-price" value="${p.our_price}"></div>
+      <div class="field"><label>Discount %</label>
+        <input type="number" id="e-disc" value="${p.discount||0}" min="0" max="80"></div>
+      <div class="field"><label>Stock</label>
+        <input type="number" id="e-stock" value="${p.stock||0}" min="0"></div>
+      <div class="field"><label>Delivery (days)</label>
+        <input type="number" id="e-del" value="${p.delivery_days||3}" min="1"></div>
+    </div>
+    <div class="field"><label>Description</label>
+      <textarea id="e-desc">${p.description||''}</textarea></div>
+    <div id="edit-alert"></div>`,
+    `<button class="btn btn-outline" onclick="closeModal()">Cancel</button>
+     <button class="btn btn-gold" onclick="saveEdit('${pid}')">💾 Save Changes</button>`
+  );
+}
+async function saveEdit(pid) {
+  const body = {
+    product_name: document.getElementById('e-name').value,
+    our_price:    parseInt(document.getElementById('e-price').value),
+    discount:     parseInt(document.getElementById('e-disc').value),
+    stock:        parseInt(document.getElementById('e-stock').value),
+    delivery_days:parseInt(document.getElementById('e-del').value),
+    description:  document.getElementById('e-desc').value,
+  };
+  try {
+    await api(`/api/seller/products/${pid}/update`, 'POST', body);
+    closeModal(); toast('✅ Product updated.','success'); loadProducts();
+  } catch(e) {
+    document.getElementById('edit-alert').innerHTML = renderAlert('Error: '+e.message,'error');
+  }
+}
+
+// ══════════════════════════════════════════
+// PAGE: ADD PRODUCT
+// ══════════════════════════════════════════
+const ATTR_PRESETS = {
+  Smartphones:{
+    Storage:['64GB','128GB','256GB','512GB','1TB'],
+    Color:['Black','White','Blue','Green','Gold','Silver','Purple','Red'],
+    RAM:['4GB','6GB','8GB','12GB','16GB'],
+    Connectivity:['4G','5G'],
+    OS:['Android 13','Android 14','iOS 16','iOS 17'],
+  },
+  Laptops:{
+    Storage:['256GB SSD','512GB SSD','1TB SSD'],
+    RAM:['8GB','16GB','32GB','64GB'],
+    Processor:['Intel i5','Intel i7','AMD Ryzen 5','AMD Ryzen 7','Apple M2','Apple M3'],
+  },
+  Audio:{
+    Type:['In-Ear','On-Ear','Over-Ear','True Wireless'],
+    Connectivity:['Bluetooth 5.0','Bluetooth 5.3','Wired'],
+  },
+  Other:{ Color:['Black','White','Silver','Blue'], Variant:['Standard','Pro','Plus','Ultra'] },
+};
+
+let addStep = 1;
+let analyzeResult = null;
+
+function loadAdd() {
+  addStep = 1; analyzeResult = null;
+  renderAddStep();
+}
+
+function renderAddStep() {
+  const el = document.getElementById('page-add');
+  el.innerHTML = `
+  <div class="page-header anim">
+    <h1>➕ Add New Product</h1>
+    <p>List a new product on ByteFlow Mart</p>
+  </div>
+  ${renderStepBar(['Product Info','Analyze','Review & Add'], addStep)}
+  <div id="add-step-content"></div>`;
+
+  if (addStep === 1) renderStep1();
+  if (addStep === 2) renderStep2();
+  if (addStep === 3) renderStep3();
+}
+
+function renderStep1() {
+  const el = document.getElementById('add-step-content');
+  const cat = (window._addDraft?.category) || 'Smartphones';
+  const presets = ATTR_PRESETS[cat] || ATTR_PRESETS.Other;
+
+  el.innerHTML = `
+  <div style="display:grid;grid-template-columns:1fr 2fr;gap:1.2rem;">
+    <div class="card">
+      <div class="card-title">📷 Product Image</div>
+      <input type="file" id="img-upload" accept="image/*" style="display:none"
+        onchange="previewImg(this)">
+      <div id="img-preview"
+        style="width:100%;height:160px;background:var(--navy-mid);border:2px dashed var(--gold-dim);
+               border-radius:10px;display:flex;align-items:center;justify-content:center;
+               color:var(--text-3);font-size:.82rem;flex-direction:column;gap:.4rem;cursor:pointer;"
+        onclick="document.getElementById('img-upload').click()">
+        <div style="font-size:2rem;">📷</div><div>Click to upload</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">📝 Product Details</div>
+      <div class="field">
+        <label>Product Name *</label>
+        <input type="text" id="a-name" placeholder="e.g. Apple iPhone 15"
+          value="${window._addDraft?.product_name||''}">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
+        <div class="field">
+          <label>Category</label>
+          <select id="a-cat" onchange="renderStep1()">
+            ${Object.keys(ATTR_PRESETS).map(c => `<option ${c===cat?'selected':''}>${c}</option>`).join('')}
+          </select>
+        </div>
+        <div class="field">
+          <label>Stock *</label>
+          <input type="number" id="a-stock" min="0" value="${window._addDraft?.stock||1}">
+        </div>
+      </div>
+      <div class="field">
+        <label>Competitor Search Query</label>
+        <input type="text" id="a-query" placeholder="e.g. Apple iPhone 15 128GB"
+          value="${window._addDraft?.search_query||''}">
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:.75rem;">
+    <div class="card-title">⚙️ Product Attributes</div>
+    <p style="color:var(--text-3);font-size:.8rem;margin-bottom:.9rem;">
+      Select all that apply — used for competitor matching and AI title generation.
+    </p>
+    <div class="attr-section">
+      ${Object.entries(presets).map(([name, opts]) => `
+        <div class="attr-group">
+          <div class="attr-group-title">${name}</div>
+          <div class="checkbox-group">
+            ${opts.map(opt => `
+              <label class="checkbox-label ${window._addDraft?.attributes?.[name]?.includes(opt)?'checked':''}">
+                <input type="checkbox" value="${opt}" data-attr="${name}"
+                  ${window._addDraft?.attributes?.[name]?.includes(opt)?'checked':''}
+                  onchange="this.closest('.checkbox-label').classList.toggle('checked',this.checked)">
+                ${opt}
+              </label>`).join('')}
+          </div>
+        </div>`).join('')}
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:.5rem;">
+      <div class="field"><label>Custom Attribute Name</label>
+        <input type="text" id="a-ckey" placeholder="e.g. Warranty"></div>
+      <div class="field"><label>Custom Attribute Value</label>
+        <input type="text" id="a-cval" placeholder="e.g. 1 Year"></div>
+    </div>
+    <div id="step1-alert" style="margin-top:.5rem;"></div>
+    <button class="btn btn-gold btn-full" style="margin-top:.75rem;" onclick="goStep2()">
+      🔍 Analyze Product →
+    </button>
+  </div>`;
+  initRipple('.btn');
+}
+
+function previewImg(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    document.getElementById('img-preview').innerHTML =
+      `<img src="${e.target.result}" style="width:100%;height:160px;object-fit:contain;border-radius:8px;">`;
+    window._addDraft = window._addDraft || {};
+    window._addDraft.image_url = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function goStep2() {
+  const name  = document.getElementById('a-name')?.value?.trim();
+  const cat   = document.getElementById('a-cat')?.value;
+  const stock = parseInt(document.getElementById('a-stock')?.value || 1);
+  const query = document.getElementById('a-query')?.value?.trim();
+
+  if (!name) {
+    document.getElementById('step1-alert').innerHTML = renderAlert('Product name is required.','error');
+    return;
+  }
+
+  // Collect attributes
+  const attrs = {};
+  document.querySelectorAll('input[data-attr]:checked').forEach(cb => {
+    const k = cb.dataset.attr;
+    if (!attrs[k]) attrs[k] = [];
+    attrs[k].push(cb.value);
+  });
+  // Flatten to string
+  const flatAttrs = {};
+  Object.entries(attrs).forEach(([k,v]) => { flatAttrs[k] = v.join(', '); });
+  // Custom attr
+  const ck = document.getElementById('a-ckey')?.value?.trim();
+  const cv = document.getElementById('a-cval')?.value?.trim();
+  if (ck && cv) flatAttrs[ck] = cv;
+
+  window._addDraft = {
+    product_name: name, category: cat, stock, search_query: query || name,
+    attributes: flatAttrs, image_url: window._addDraft?.image_url || ''
+  };
+  addStep = 2; renderAddStep();
+}
+
+function renderStep2() {
+  const d = window._addDraft || {};
+  const attrStr = Object.entries(d.attributes||{}).slice(0,4)
+    .map(([k,v])=>`${k}: ${v}`).join(' · ');
+  document.getElementById('add-step-content').innerHTML = `
+  <div class="card anim">
+    <div class="card-title">🛍 ${d.product_name}</div>
+    <div style="font-size:.8rem;color:var(--text-3);">${attrStr||'No attributes selected'}</div>
+  </div>
+  ${renderAlert('ℹ️ Click <b>Run Full Analysis</b> to match competitors, generate AI title/description, and calculate optimal pricing.','info')}
+  <div style="display:grid;grid-template-columns:3fr 1fr;gap:.75rem;margin-top:1rem;">
+    <button class="btn btn-gold btn-full" id="run-analyze-btn" onclick="runAnalysis()">
+      🚀 Run Full Analysis →
+    </button>
+    <button class="btn btn-outline btn-full" onclick="addStep=1;renderAddStep()">← Back</button>
+  </div>
+  <div id="analyze-progress" style="margin-top:1rem;"></div>`;
+  initRipple('.btn');
+}
+
+async function runAnalysis() {
+  const btn = document.getElementById('run-analyze-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spin"></span> Analyzing...';
+  const prog = document.getElementById('analyze-progress');
+
+  prog.innerHTML = `
+  <div class="card">
+    <div id="prog-bar-wrap" style="background:var(--navy-raised);border-radius:4px;height:5px;margin-bottom:1rem;overflow:hidden;">
+      <div id="prog-bar" style="height:100%;width:0%;background:linear-gradient(90deg,var(--gold-dim),var(--gold));transition:width .5s;border-radius:4px;"></div>
+    </div>
+    <div id="prog-status" style="color:var(--text-2);font-size:.84rem;">🔎 Matching competitors...</div>
+  </div>`;
+
+  function setProgress(pct, text) {
+    document.getElementById('prog-bar').style.width = pct + '%';
+    document.getElementById('prog-status').textContent = text;
+  }
+
+  try {
+    setProgress(20, '🔎 Matching competitors...');
+    await new Promise(r => setTimeout(r, 400));
+    setProgress(50, '💰 Calculating optimal pricing...');
+    await new Promise(r => setTimeout(r, 300));
+    setProgress(75, '✍️ Generating AI title & description...');
+
+    const d = window._addDraft;
+    const result = await api('/api/seller/analyze', 'POST', {
+      product_name: d.product_name, attributes: d.attributes,
+      search_query: d.search_query, stock: d.stock, category: d.category
+    });
+
+    setProgress(100, '✅ Analysis complete!');
+    analyzeResult = result;
+    setTimeout(() => { addStep = 3; renderAddStep(); }, 500);
+
+  } catch(e) {
+    prog.innerHTML = renderAlert('Analysis failed: ' + e.message, 'error');
+    btn.disabled = false;
+    btn.innerHTML = '🚀 Run Full Analysis →';
+  }
+}
+
+function renderStep3() {
+  const d = window._addDraft || {};
+  const r = analyzeResult || {};
+  const el = document.getElementById('add-step-content');
+
+  el.innerHTML = `
+  <div class="section-title anim">📋 Review & Confirm Product</div>
+  ${renderAlert('✏️ All fields are editable. Adjust before adding to your listings.','info')}
+
+  <div style="display:grid;grid-template-columns:3fr 2fr;gap:1.2rem;margin-top:1rem;">
+    <div>
+      <div class="card">
+        <div class="card-title">Product Title</div>
+        <div class="field" style="margin-bottom:.5rem;">
+          <input type="text" id="r-title" value="${(r.title||d.product_name).replace(/"/g,'&quot;')}">
+        </div>
+        <div class="card-title" style="margin-top:.75rem;">Description</div>
+        <div class="field" style="margin-bottom:.5rem;">
+          <textarea id="r-desc" rows="4">${r.description||''}</textarea>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.75rem;">
+          ${Object.entries(d.attributes||{}).map(([k,v]) =>
+            `<span class="badge badge-blue">${k}: ${v}</span>`).join('')}
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem;">
+          <div class="field"><label>Price (₹)</label>
+            <input type="number" id="r-price" value="${r.suggested_price||50000}"></div>
+          <div class="field"><label>Discount %</label>
+            <input type="number" id="r-disc" value="${r.suggested_discount||10}" min="0" max="80"></div>
+          <div class="field"><label>Stock</label>
+            <input type="number" id="r-stock" value="${d.stock||1}" min="0"></div>
+        </div>
+        <div class="card" style="padding:.85rem;margin-top:.5rem;">
+          <div style="font-size:.72rem;color:var(--text-3);font-weight:600;
+                      text-transform:uppercase;letter-spacing:.5px;">Estimated Delivery</div>
+          <div style="font-weight:700;color:var(--text-1);margin-top:.2rem;">
+            🚚 ${r.delivery_days||3} days —
+            <span style="color:var(--gold);">by ${r.delivery_date||'—'}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-title">🏬 Competitor Prices</div>
+      ${r.competitors?.length
+        ? r.competitors.map(c => renderCompetitorRow(c, r.suggested_price||0)).join('')
+        : renderAlert('No competitors matched.','info')}
+
+      ${r.bundles?.length ? `
+        <div class="section-title" style="margin-top:1rem;">🎁 Bundle Offers</div>
+        ${r.bundles.slice(0,3).map(b => renderBundleCard(b)).join('')}
+      ` : ''}
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 3fr;gap:.75rem;margin-top:1.2rem;">
+    <button class="btn btn-outline btn-full" onclick="addStep=2;renderAddStep()">← Back</button>
+    <button class="btn btn-gold btn-full" onclick="finalAddProduct()">
+      ✅ Add to My Products
+    </button>
+  </div>
+  <div id="add-final-alert" style="margin-top:.75rem;"></div>`;
+  initRipple('.btn');
+}
+
+async function finalAddProduct() {
+  const d = window._addDraft || {};
+  const r = analyzeResult || {};
+  const body = {
+    product_name:  document.getElementById('r-title').value,
+    search_query:  d.search_query,
+    category:      d.category,
+    stock:         parseInt(document.getElementById('r-stock').value),
+    attributes:    d.attributes,
+    image_url:     d.image_url || '',
+    title:         document.getElementById('r-title').value,
+    description:   document.getElementById('r-desc').value,
+    our_price:     parseInt(document.getElementById('r-price').value),
+    discount:      parseInt(document.getElementById('r-disc').value),
+    delivery_days: r.delivery_days || 3,
+  };
+  try {
+    await api('/api/seller/products/add', 'POST', body);
+    toast('✅ Product added to your listings!','success');
+    window._addDraft = null; analyzeResult = null; addStep = 1;
+    showPage('products');
+  } catch(e) {
+    document.getElementById('add-final-alert').innerHTML = renderAlert('Error: '+e.message,'error');
+  }
+}
+
+// ══════════════════════════════════════════
+// PAGE: ALERTS
+// ══════════════════════════════════════════
+async function loadAlerts() {
+  const el = document.getElementById('page-alerts');
+  el.innerHTML = `<div class="skeleton" style="height:200px;"></div>`;
+  try {
+    const data = await api('/api/seller/alerts');
+    const products = data.products || [];
+    const totalAlerts = products.reduce((s,p) => s + p.alerts.length, 0);
+
+    el.innerHTML = `
+    <div class="page-header anim">
+      <h1>🔔 Competitor Alerts</h1>
+      <p>Real-time price & discount change monitoring</p>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:.75rem;">
+      ${totalAlerts
+        ? `<div class="alert alert-warn anim" style="flex:1;margin:0;">
+            ⚠️ <b>${totalAlerts} unresolved alert(s)</b> — review and act below.
+           </div>`
+        : `<div class="alert alert-success anim" style="flex:1;margin:0;">
+            ✅ All clear — no competitor changes detected.
+           </div>`}
+      <button class="btn btn-gold" onclick="scanAllProducts(this)">🔄 Scan All</button>
+    </div>
+    ${data.last_scanned ? `<p style="color:var(--text-3);font-size:.75rem;margin-bottom:1rem;">
+      Last scan: ${data.last_scanned.slice(0,19).replace('T',' ')}</p>` : ''}
+    <hr>
+    <div id="alerts-list">
+      ${products.map(p => renderAlertRow(p)).join('')}
+    </div>`;
+    initRipple('.btn');
+  } catch(e) {
+    el.innerHTML = renderAlert('Failed to load alerts: '+e.message,'error');
+  }
+}
+
+function renderAlertRow(p) {
+  const hasAlerts = p.alerts.length > 0;
+  const borderColor = hasAlerts ? 'rgba(231,76,60,.35)' : 'var(--border)';
+  const badge = hasAlerts
+    ? `<span class="badge badge-red badge-pulse">⚠ ${p.alerts.length}</span>`
+    : `<span class="badge badge-green">✓ Clear</span>`;
+
+  const alertsList = p.alerts.map(a => {
+    const kind = a.severity === 'high' ? 'error' : a.severity === 'medium' ? 'warn' : 'info';
+    return `<div class="alert alert-${kind}">
+      <b>${a.severity} priority</b> · 🌐 ${a.platform} — ${a.message}
+    </div>`;
+  }).join('');
+
+  return `
+  <div class="card anim" style="border-color:${borderColor};">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:.6rem;">
+      <div>
+        <span style="font-weight:700;font-size:.95rem;">${p.product_name}</span>
+        <span style="color:var(--text-3);font-size:.78rem;margin-left:.75rem;">
+          ${fmtPrice(p.our_price)} · ${p.discount||0}% off
+        </span>
+      </div>
+      ${badge}
+    </div>
+    ${alertsList}
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.65rem;">
+      <button class="btn btn-outline btn-sm" onclick="scanOne('${p.id}',this)">🔍 Scan Now</button>
+      <button class="btn btn-outline btn-sm" onclick="getAIStrategy('${p.id}',this)">🤖 AI Strategy</button>
+      <button class="btn btn-gold btn-sm" onclick="oneClickUpdate('${p.id}',this)">⚡ 1-Click Update</button>
+      <button class="btn btn-danger btn-sm" onclick="clearAlerts('${p.id}',this)">✅ Clear</button>
+    </div>
+    <div id="ai-output-${p.id}" style="margin-top:.75rem;"></div>
+  </div>`;
+}
+
+async function scanOne(pid, btn) {
+  btn.disabled=true; btn.textContent='...';
+  try {
+    const d = await api(`/api/seller/alerts/scan/${pid}`,'POST');
+    toast(d.changes?.length ? `⚠ ${d.changes.length} change(s)` : '✅ No changes','success');
+    loadAlerts(); loadAlertBadge();
+  } catch(e) { toast('Error: '+e.message,'error'); }
+  finally { btn.disabled=false; btn.textContent='🔍 Scan Now'; }
+}
+
+async function getAIStrategy(pid, btn) {
+  const outEl = document.getElementById(`ai-output-${pid}`);
+  btn.disabled=true; btn.innerHTML='<span class="spin"></span>';
+  try {
+    const d = await api(`/api/seller/alerts/ai-strategy/${pid}`,'POST');
+    const severityConfig = {
+      high:   { color:'var(--red)',    bg:'rgba(231,76,60,.10)',   label:'High Priority' },
+      medium: { color:'var(--orange)', bg:'rgba(230,126,34,.10)',  label:'Recommended' },
+      low:    { color:'var(--blue)',   bg:'rgba(41,128,185,.10)',  label:'Opportunity' },
+      info:   { color:'var(--text-3)', bg:'rgba(94,116,152,.08)',  label:'Note' },
+    };
+    const cards = (d.strategies||[]).map(s => {
+      const cfg = severityConfig[s.severity] || severityConfig.info;
+      return `<div style="background:${cfg.bg};border:1px solid ${cfg.color}33;
+                border-left:3px solid ${cfg.color};border-radius:8px;
+                padding:.75rem 1rem;margin-bottom:.55rem;">
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem;">
+          <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;
+                letter-spacing:.6px;color:${cfg.color};background:${cfg.color}22;
+                padding:.15rem .5rem;border-radius:4px;">${cfg.label}</span>
+          <span style="font-size:.7rem;color:var(--text-3);text-transform:capitalize;">${s.strategy}</span>
+        </div>
+        <div style="font-size:.875rem;font-weight:600;color:var(--text-1);margin-bottom:.25rem;">${s.action}</div>
+        <div style="font-size:.78rem;color:var(--text-2);line-height:1.6;">${s.rationale}</div>
+      </div>`;
+    }).join('');
+
+    const llmBlock = d.llm_insight ? `
+      <div style="margin-top:.75rem;padding:.75rem 1rem;background:rgba(201,168,76,.07);
+           border:1px solid var(--gold-dim);border-radius:8px;">
+        <div style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;
+             color:var(--gold);margin-bottom:.35rem;">AI Insight</div>
+        <div style="font-size:.83rem;color:var(--text-2);line-height:1.7;">${d.llm_insight}</div>
+      </div>` : '';
+
+    outEl.innerHTML = `
+      <div style="margin-top:.5rem;">
+        <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;
+             color:var(--text-3);margin-bottom:.6rem;">Strategy Analysis</div>
+        ${cards}${llmBlock}
+        <button class="btn btn-gold btn-sm" style="margin-top:.75rem;"
+          onclick="oneClickUpdate('${pid}',this)">&#9889; Apply Suggested Pricing</button>
+      </div>`;
+    initRipple('.btn');
+  } catch(e) {
+    outEl.innerHTML = renderAlert('AI Error: '+e.message,'error');
+  }
+  finally { btn.disabled=false; btn.textContent='🤖 AI Strategy'; }
+}
+
+async function oneClickUpdate(pid, btn) {
+  btn.disabled=true; btn.innerHTML='<span class="spin"></span>';
+  try {
+    const d = await api(`/api/seller/alerts/one-click-update/${pid}`,'POST');
+    toast(`✅ Price: ${fmtPrice(d.old_price)} → ${fmtPrice(d.new_price)} | ${d.new_discount}% off`,'success');
+    loadAlerts(); loadProducts();
+  } catch(e) { toast('Error: '+e.message,'error'); }
+  finally { btn.disabled=false; btn.innerHTML='⚡ 1-Click Update'; }
+}
+
+async function clearAlerts(pid, btn) {
+  btn.disabled=true;
+  try {
+    await api(`/api/seller/alerts/clear/${pid}`,'POST');
+    toast('Alerts cleared.','success'); loadAlerts(); loadAlertBadge();
+  } catch(e) { toast('Error: '+e.message,'error'); }
+  finally { btn.disabled=false; btn.textContent='✅ Clear'; }
+}
+
+async function scanAllProducts(btn) {
+  btn.disabled=true; btn.innerHTML='<span class="spin"></span> Scanning...';
+  try {
+    const d = await api('/api/seller/alerts/scan-all','POST');
+    toast(d.total_new ? `⚠ ${d.total_new} new alert(s)` : '✅ Scan complete — no changes','success');
+    loadAlerts(); loadAlertBadge();
+  } catch(e) { toast('Error: '+e.message,'error'); }
+  finally { btn.disabled=false; btn.innerHTML='🔄 Scan All'; }
+}
+
+// ══════════════════════════════════════════
+// PAGE: STRATEGY
+// ══════════════════════════════════════════
+async function loadStrategy() {
+  const el = document.getElementById('page-strategy');
+  el.innerHTML = `<div class="skeleton" style="height:200px;"></div>`;
+  try {
+    const d = await api('/api/strategy/data');
+    const matches = d.data.matches || [];
+    const allOurs  = matches.map(m => m.our_price);
+    const allComps = matches.flatMap(m => m.competitors?.map(c => c.price)||[]);
+    const undercut = matches.filter(m => m.competitors?.some(c => c.price < m.our_price)).length;
+
+    el.innerHTML = `
+    <div class="page-header anim">
+      <h1>📊 Strategy Dashboard</h1>
+      <p>AI-powered competitive intelligence & pricing</p>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;margin-bottom:1.2rem;">
+      <span class="badge ${d.is_optimized?'badge-green':'badge-gold'}">
+        ${d.is_optimized?'✓ Optimized Data Active':'Using Original Data'}
+      </span>
+      <div style="display:flex;gap:.6rem;">
+        <button class="btn btn-gold btn-sm" onclick="applyAllStrategies(this)">🚀 Apply All</button>
+        <button class="btn btn-outline btn-sm" onclick="resetStrategy(this)">🔄 Reset</button>
+      </div>
+    </div>
+    <div class="metrics">
+      <div class="metric-card"><div class="metric-val" data-target="${matches.length}">${matches.length}</div><div class="metric-lbl">Tracked</div></div>
+      <div class="metric-card"><div class="metric-val" data-prefix="₹" data-target="${allOurs.length?Math.round(allOurs.reduce((a,b)=>a+b,0)/allOurs.length):0}">₹${allOurs.length?Math.round(allOurs.reduce((a,b)=>a+b,0)/allOurs.length).toLocaleString('en-IN'):'—'}</div><div class="metric-lbl">Avg Our Price</div></div>
+      <div class="metric-card"><div class="metric-val" data-prefix="₹" data-target="${allComps.length?Math.round(allComps.reduce((a,b)=>a+b,0)/allComps.length):0}">₹${allComps.length?Math.round(allComps.reduce((a,b)=>a+b,0)/allComps.length).toLocaleString('en-IN'):'—'}</div><div class="metric-lbl">Avg Comp Price</div></div>
+      <div class="metric-card"><div class="metric-val" data-target="${undercut}" style="color:${undercut?'var(--red)':'var(--green)'}">${undercut}</div><div class="metric-lbl">Undercut</div></div>
+    </div>
+    <hr>
+    <div id="strategy-items">
+      ${matches.map(m => renderStrategyItem(m, d.our_products)).join('')}
+    </div>`;
+    animateCounters(); initRipple('.btn');
+  } catch(e) {
+    el.innerHTML = renderAlert('Failed: '+e.message,'error');
+  }
+}
+
+function renderStrategyItem(m, ourProds) {
+  const ours = ourProds?.find(p => p.id === m.our_product_id) || {};
+  const compPrices = m.competitors?.map(c=>c.price)||[];
+  const minComp = compPrices.length ? Math.min(...compPrices) : 0;
+  const position = m.our_price <= minComp + 500 ? '✅ Competitive' : '⚠ Above Market';
+  const posColor = position.includes('✅') ? 'var(--green)' : 'var(--orange)';
+  const retail = ours.retail_price || m.our_retail_price || 0;
+  const margin = m.our_price - retail;
+
+  return `
+  <div class="card anim strat-item" id="strat-${m.our_product_id}">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem;">
+      <div>
+        <span style="font-weight:700;font-size:.95rem;">${m.our_product_name}</span>
+        <span style="color:var(--text-3);font-size:.78rem;margin-left:.75rem;">${fmtPrice(m.our_price)}</span>
+      </div>
+      <span class="badge" style="color:${posColor};border-color:${posColor}44;background:${posColor}18;">
+        ${position}
+      </span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+      <div>
+        <div class="section-title" style="font-size:.9rem;">🏪 Our Store</div>
+        <table class="spec-table">
+          <tr><td>Price</td><td style="color:var(--gold);font-weight:800;">${fmtPrice(m.our_price)}</td></tr>
+          <tr><td>Retail</td><td>${fmtPrice(retail)}</td></tr>
+          <tr><td>Margin</td><td style="color:${margin>0?'var(--green)':'var(--red)'};">₹${margin.toLocaleString('en-IN')}</td></tr>
+          <tr><td>Discount</td><td><span class="badge badge-green">${m.our_discount||0}% off</span></td></tr>
+          <tr><td>Delivery</td><td>🚚 ${m.our_delivery_days||0}d</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="section-title" style="font-size:.9rem;">🏬 Competitors</div>
+        ${(m.competitors||[]).map(c => renderCompetitorRow(c, m.our_price)).join('')}
+      </div>
+    </div>
+
+    <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.85rem;">
+      <button class="btn btn-outline btn-sm" onclick="toggleStratEdit('${m.our_product_id}')">✏️ Edit Values</button>
+      <button class="btn btn-outline btn-sm" onclick="getStratAI('${m.our_product_id}',this)">🤖 AI Strategy</button>
+    </div>
+
+    <div class="edit-inline" id="strat-edit-${m.our_product_id}">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:.75rem;margin-bottom:.75rem;">
+        <div class="field"><label>Price</label>
+          <input type="number" id="se-price-${m.our_product_id}" value="${m.our_price}"></div>
+        <div class="field"><label>Discount %</label>
+          <input type="number" id="se-disc-${m.our_product_id}" value="${m.our_discount||0}"></div>
+        <div class="field"><label>Delivery (d)</label>
+          <input type="number" id="se-del-${m.our_product_id}" value="${m.our_delivery_days||3}"></div>
+        <div class="field"><label>Rating</label>
+          <input type="number" id="se-rat-${m.our_product_id}" value="${m.our_rating||4.5}" step=".1" min="1" max="5"></div>
+      </div>
+      <button class="btn btn-gold btn-sm" onclick="saveStratEdit('${m.our_product_id}')">💾 Save</button>
+    </div>
+
+    <div id="strat-ai-${m.our_product_id}" style="margin-top:.75rem;"></div>
+  </div>`;
+}
+
+function toggleStratEdit(pid) {
+  const el = document.getElementById(`strat-edit-${pid}`);
+  el.classList.toggle('open');
+  initRipple('.btn');
+}
+
+async function saveStratEdit(pid) {
+  const body = {
+    pid,
+    our_price:         parseInt(document.getElementById(`se-price-${pid}`).value),
+    our_discount:      parseInt(document.getElementById(`se-disc-${pid}`).value),
+    our_delivery_days: parseInt(document.getElementById(`se-del-${pid}`).value),
+    our_rating:        parseFloat(document.getElementById(`se-rat-${pid}`).value),
+  };
+  try {
+    await api('/api/strategy/save-item','POST',body);
+    toast('✅ Saved.','success'); loadStrategy();
+  } catch(e) { toast('Error: '+e.message,'error'); }
+}
+
+async function getStratAI(pid, btn) {
+  const outEl = document.getElementById(`strat-ai-${pid}`);
+  btn.disabled=true; btn.innerHTML='<span class="spin"></span>';
+  try {
+    const d = await api(`/api/strategy/ai/${pid}`,'POST');
+    const severityConfig = {
+      high:   { color:'var(--red)',    bg:'rgba(231,76,60,.10)',   label:'High Priority' },
+      medium: { color:'var(--orange)', bg:'rgba(230,126,34,.10)',  label:'Recommended' },
+      low:    { color:'var(--blue)',   bg:'rgba(41,128,185,.10)',  label:'Opportunity' },
+      info:   { color:'var(--text-3)', bg:'rgba(94,116,152,.08)',  label:'Note' },
+    };
+    const cards = (d.strategies||[]).map(s => {
+      const cfg = severityConfig[s.severity] || severityConfig.info;
+      return `<div style="background:${cfg.bg};border:1px solid ${cfg.color}33;
+                border-left:3px solid ${cfg.color};border-radius:8px;
+                padding:.75rem 1rem;margin-bottom:.55rem;">
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem;">
+          <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;
+                letter-spacing:.6px;color:${cfg.color};background:${cfg.color}22;
+                padding:.15rem .5rem;border-radius:4px;">${cfg.label}</span>
+          <span style="font-size:.7rem;color:var(--text-3);text-transform:capitalize;">${s.strategy}</span>
+        </div>
+        <div style="font-size:.875rem;font-weight:600;color:var(--text-1);margin-bottom:.25rem;">${s.action}</div>
+        <div style="font-size:.78rem;color:var(--text-2);line-height:1.6;">${s.rationale}</div>
+      </div>`;
+    }).join('');
+
+    const llmBlock = d.llm_insight ? `
+      <div style="margin-top:.75rem;padding:.75rem 1rem;background:rgba(201,168,76,.07);
+           border:1px solid var(--gold-dim);border-radius:8px;">
+        <div style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;
+             color:var(--gold);margin-bottom:.35rem;">AI Insight</div>
+        <div style="font-size:.83rem;color:var(--text-2);line-height:1.7;">${d.llm_insight}</div>
+      </div>` : '';
+
+    outEl.innerHTML = `
+      <div style="margin-top:.5rem;">
+        <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;
+             color:var(--text-3);margin-bottom:.6rem;">Strategy Analysis</div>
+        ${cards}${llmBlock}
+        <button class="btn btn-gold btn-sm" style="margin-top:.75rem;"
+          onclick="applySuggestedPrice('${pid}',this)">&#9889; Apply Suggested Price</button>
+      </div>`;
+    initRipple('.btn');
+  } catch(e) {
+    outEl.innerHTML = renderAlert('AI error: '+e.message,'error');
+  }
+  finally { btn.disabled=false; btn.textContent='🤖 AI Strategy'; }
+}
+
+async function applySuggestedPrice(pid, btn) {
+  btn.disabled=true; btn.innerHTML='<span class="spin"></span>';
+  try {
+    const d = await api(`/api/seller/alerts/one-click-update/${pid}`,'POST');
+    toast(`✅ ${fmtPrice(d.old_price)} → ${fmtPrice(d.new_price)}`,'success');
+    loadStrategy();
+  } catch(e) { toast('Error: '+e.message,'error'); }
+  finally { btn.disabled=false; btn.textContent='⚡ Apply'; }
+}
+
+async function applyAllStrategies(btn) {
+  btn.disabled=true; btn.innerHTML='<span class="spin"></span>';
+  try {
+    await api('/api/strategy/apply-all','POST');
+    toast('✅ Strategies applied.','success'); loadStrategy();
+  } catch(e) { toast('Error: '+e.message,'error'); }
+  finally { btn.disabled=false; btn.innerHTML='🚀 Apply All'; }
+}
+
+async function resetStrategy(btn) {
+  btn.disabled=true;
+  try {
+    await api('/api/strategy/reset','POST');
+    toast('✅ Reset to original.','success'); loadStrategy();
+  } catch(e) { toast('Error: '+e.message,'error'); }
+  finally { btn.disabled=false; btn.textContent='🔄 Reset'; }
+}
+
+// ══════════════════════════════════════════
+// PAGE: PROFILE
+// ══════════════════════════════════════════
+async function loadProfile() {
+  const el = document.getElementById('page-profile');
+  el.innerHTML = `<div class="skeleton" style="height:200px;"></div>`;
+  try {
+    const s = await api('/api/seller/profile');
+    const data = await api('/api/seller/products');
+    const prods = data.products || [];
+    const totalStock = prods.reduce((a,p)=>a+(p.stock||0),0);
+
+    el.innerHTML = `
+    <div class="page-header anim">
+      <h1>👤 Seller Profile</h1>
+      <p>Manage your store information</p>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 1fr;gap:1.2rem;">
+      <div class="card">
+        <div class="card-title">🏪 Store Information</div>
+        <div class="profile-grid">
+          <div class="field"><label>Store Name</label>
+            <input type="text" id="p-store" value="${s.store_name||''}"></div>
+          <div class="field"><label>Seller Name</label>
+            <input type="text" id="p-name" value="${s.seller_name||''}"></div>
+          <div class="field"><label>Email</label>
+            <input type="email" id="p-email" value="${s.email||''}"></div>
+          <div class="field"><label>Phone</label>
+            <input type="text" id="p-phone" value="${s.phone||''}"></div>
+          <div class="field"><label>GSTIN</label>
+            <input type="text" id="p-gstin" value="${s.gstin||''}"></div>
+          <div class="field"><label>Address</label>
+            <input type="text" id="p-addr" value="${s.store_location?.address||''}"></div>
+          <div class="field"><label>City</label>
+            <input type="text" id="p-city" value="${s.store_location?.city||''}"></div>
+          <div class="field"><label>State</label>
+            <input type="text" id="p-state" value="${s.store_location?.state||''}"></div>
+          <div class="field"><label>Pincode</label>
+            <input type="text" id="p-pin" value="${s.store_location?.pincode||''}"></div>
+          <div class="field"><label>Warehouse Pincode</label>
+            <input type="text" id="p-wpin" value="${s.warehouse_pincode||''}"></div>
+        </div>
+        <div id="profile-alert" style="margin-top:.5rem;"></div>
+        <button class="btn btn-gold" style="margin-top:.75rem;" onclick="saveProfile()">
+          💾 Save Profile
+        </button>
+      </div>
+
+      <div>
+        <div class="card" style="text-align:center;">
+          <div class="metric-val" style="font-size:2rem;">⭐ ${s.rating||0}</div>
+          <div class="metric-lbl">Store Rating</div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="metric-val">${(s.total_sales||0).toLocaleString('en-IN')}</div>
+          <div class="metric-lbl">Total Sales</div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="metric-val">${prods.length}</div>
+          <div class="metric-lbl">Products Listed</div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="metric-val">${totalStock.toLocaleString('en-IN')}</div>
+          <div class="metric-lbl">Total Stock</div>
+        </div>
+        <div class="card">
+          <div class="card-title">📍 Store Location</div>
+          <div style="font-size:.85rem;color:var(--text-2);line-height:1.8;">
+            ${s.store_location?.address||''}<br>
+            ${s.store_location?.city||''}, ${s.store_location?.state||''}<br>
+            PIN: ${s.store_location?.pincode||''}<br>
+            <span style="color:var(--text-3);font-size:.75rem;">
+              Member since: ${s.joined_date||'—'}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>`;
+    initRipple('.btn');
+  } catch(e) {
+    el.innerHTML = renderAlert('Failed to load profile: '+e.message,'error');
+  }
+}
+
+async function saveProfile() {
+  const s = await api('/api/seller/profile');
+  const updated = Object.assign({}, s, {
+    store_name:       document.getElementById('p-store').value,
+    seller_name:      document.getElementById('p-name').value,
+    email:            document.getElementById('p-email').value,
+    phone:            document.getElementById('p-phone').value,
+    gstin:            document.getElementById('p-gstin').value,
+    warehouse_pincode:document.getElementById('p-wpin').value,
+    store_location: {
+      ...s.store_location,
+      address: document.getElementById('p-addr').value,
+      city:    document.getElementById('p-city').value,
+      state:   document.getElementById('p-state').value,
+      pincode: document.getElementById('p-pin').value,
+    }
+  });
+  try {
+    await api('/api/seller/profile','POST',updated);
+    toast('✅ Profile saved.','success');
+  } catch(e) {
+    document.getElementById('profile-alert').innerHTML = renderAlert('Error: '+e.message,'error');
+  }
+}
+</script>
+</body>
+</html>

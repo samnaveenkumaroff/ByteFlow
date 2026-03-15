@@ -1,0 +1,187 @@
+{
+  "bundles": [
+    {
+      "trigger_product_id": "P001",
+      "trigger_keywords": ["iphone 15", "iphone15", "apple iphone"],
+      "bundle_items": [
+        {
+          "id": "B001",
+          "name": "Apple iPhone 15 Clear Case",
+          "price": 999,
+          "original_price": 1499,
+          "discount": 33,
+          "image_url": "https://store.storeimages.cdn-apple.com/iphone15-case.jpg",
+          "category": "Accessories"
+        },
+        {
+          "id": "B002",
+          "name": "Anker USB-C 20W Fast Charger",
+          "price": 1299,
+          "original_price": 1999,
+          "discount": 35,
+          "image_url": "https://cdn.anker.com/usbc-charger.jpg",
+          "category": "Chargers"
+        },
+        {
+          "id": "B003",
+          "name": "Belkin Screen Protector for iPhone 15",
+          "price": 799,
+          "original_price": 1199,
+          "discount": 33,
+          "image_url": "https://belkin.com/screenprotector.jpg",
+          "category": "Screen Protection"
+        },
+        {
+          "id": "B004",
+          "name": "Apple AirPods Pro (2nd Gen)",
+          "price": 19999,
+          "original_price": 24900,
+          "discount": 20,
+          "image_url": "https://store.storeimages.cdn-apple.com/airpodspro.jpg",
+          "category": "Audio"
+        }
+      ]
+    },
+    {
+      "trigger_product_id": "P002",
+      "trigger_keywords": ["samsung galaxy s24", "galaxy s24", "s24"],
+      "bundle_items": [
+        {
+          "id": "B005",
+          "name": "Samsung Galaxy S24 Silicone Case",
+          "price": 1199,
+          "original_price": 1799,
+          "discount": 33,
+          "image_url": "https://images.samsung.com/s24-case.jpg",
+          "category": "Accessories"
+        },
+        {
+          "id": "B006",
+          "name": "Samsung 45W Super Fast Charger",
+          "price": 1599,
+          "original_price": 2499,
+          "discount": 36,
+          "image_url": "https://images.samsung.com/charger45w.jpg",
+          "category": "Chargers"
+        },
+        {
+          "id": "B007",
+          "name": "Samsung Galaxy Buds2 Pro",
+          "price": 8999,
+          "original_price": 13999,
+          "discount": 36,
+          "image_url": "https://images.samsung.com/buds2pro.jpg",
+          "category": "Audio"
+        },
+        {
+          "id": "B008",
+          "name": "Spigen Tempered Glass S24",
+          "price": 699,
+          "original_price": 999,
+          "discount": 30,
+          "image_url": "https://spigen.com/s24-glass.jpg",
+          "category": "Screen Protection"
+        }
+      ]
+    },
+    {
+      "trigger_product_id": "P003",
+      "trigger_keywords": ["oneplus 12", "one plus 12"],
+      "bundle_items": [
+        {
+          "id": "B009",
+          "name": "OnePlus 12 Sandstone Bumper Case",
+          "price": 999,
+          "original_price": 1499,
+          "discount": 33,
+          "image_url": "https://image01.oneplus.net/case.jpg",
+          "category": "Accessories"
+        },
+        {
+          "id": "B010",
+          "name": "OnePlus SUPERVOOC 100W Charger",
+          "price": 1499,
+          "original_price": 1999,
+          "discount": 25,
+          "image_url": "https://image01.oneplus.net/charger100w.jpg",
+          "category": "Chargers"
+        },
+        {
+          "id": "B011",
+          "name": "OnePlus Buds Pro 2",
+          "price": 7999,
+          "original_price": 9999,
+          "discount": 20,
+          "image_url": "https://image01.oneplus.net/budspro2.jpg",
+          "category": "Audio"
+        }
+      ]
+    },
+    {
+      "trigger_product_id": "P004",
+      "trigger_keywords": ["xiaomi 14 ultra", "xiaomi 14", "mi 14 ultra"],
+      "bundle_items": [
+        {
+          "id": "B012",
+          "name": "Xiaomi 14 Ultra Leather Case",
+          "price": 1299,
+          "original_price": 1999,
+          "discount": 35,
+          "image_url": "https://i01.appmifile.com/case.jpg",
+          "category": "Accessories"
+        },
+        {
+          "id": "B013",
+          "name": "Xiaomi 120W HyperCharge Adapter",
+          "price": 1799,
+          "original_price": 2499,
+          "discount": 28,
+          "image_url": "https://i01.appmifile.com/charger120w.jpg",
+          "category": "Chargers"
+        },
+        {
+          "id": "B014",
+          "name": "Xiaomi Buds 4 Pro",
+          "price": 5999,
+          "original_price": 8999,
+          "discount": 33,
+          "image_url": "https://i01.appmifile.com/buds4pro.jpg",
+          "category": "Audio"
+        }
+      ]
+    },
+    {
+      "trigger_product_id": "P005",
+      "trigger_keywords": ["google pixel 8 pro", "pixel 8 pro", "pixel 8"],
+      "bundle_items": [
+        {
+          "id": "B015",
+          "name": "Google Pixel 8 Pro Case (Hazel)",
+          "price": 1499,
+          "original_price": 2199,
+          "discount": 32,
+          "image_url": "https://lh3.googleusercontent.com/pixel8-case.jpg",
+          "category": "Accessories"
+        },
+        {
+          "id": "B016",
+          "name": "Google 30W USB-C Charger",
+          "price": 1999,
+          "original_price": 2799,
+          "discount": 29,
+          "image_url": "https://lh3.googleusercontent.com/charger30w.jpg",
+          "category": "Chargers"
+        },
+        {
+          "id": "B017",
+          "name": "Google Pixel Buds Pro",
+          "price": 13999,
+          "original_price": 19990,
+          "discount": 30,
+          "image_url": "https://lh3.googleusercontent.com/pixelbuds.jpg",
+          "category": "Audio"
+        }
+      ]
+    }
+  ]
+}

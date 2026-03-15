@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "id": "U001",
+      "name": "Ananya Sharma",
+      "email": "ananya@example.com",
+      "password": "demo123",
+      "role": "customer",
+      "phone": "9876543201",
+      "location": {
+        "address": "12, Park Street",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "pincode": "600001"
+      },
+      "orders": []
+    },
+    {
+      "id": "U002",
+      "name": "Vikram Nair",
+      "email": "vikram@example.com",
+      "password": "demo123",
+      "role": "customer",
+      "phone": "9876543202",
+      "location": {
+        "address": "78, Baner Road",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "pincode": "411045"
+      },
+      "orders": []
+    },
+    {
+      "id": "SELLER001",
+      "name": "Rajesh Kumar",
+      "email": "seller@techzoneindia.com",
+      "password": "seller123",
+      "role": "seller",
+      "phone": "9876543210"
+    }
+  ]
+}

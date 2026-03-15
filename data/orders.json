@@ -1,0 +1,80 @@
+{
+  "orders": [
+    {
+      "order_id": "BF20260315000543",
+      "user_id": "U001",
+      "product_id": "P001",
+      "product_name": "Apple iPhone 15 128GB Black",
+      "quantity": 1,
+      "price": 67299,
+      "total": 67299,
+      "status": "Confirmed",
+      "placed_at": "2026-03-15T00:05:43.965984",
+      "delivery_date": "Tue, 17 Mar 2026",
+      "delivery_days": 2,
+      "buyer_location": {
+        "address": "12, Park Street",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "pincode": "600001"
+      }
+    },
+    {
+      "order_id": "BF20260315000635",
+      "user_id": "U001",
+      "product_id": "P001",
+      "product_name": "Apple iPhone 15 128GB Black",
+      "quantity": 1,
+      "price": 67299,
+      "total": 67299,
+      "status": "Confirmed",
+      "placed_at": "2026-03-15T00:06:35.731195",
+      "delivery_date": "Tue, 17 Mar 2026",
+      "delivery_days": 2,
+      "buyer_location": {
+        "address": "12, Park Street",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "pincode": "600001"
+      }
+    },
+    {
+      "order_id": "BF20260315062730",
+      "user_id": "U001",
+      "product_id": "P001",
+      "product_name": "Apple iPhone 15 128GB Black",
+      "quantity": 1,
+      "price": 69999,
+      "total": 69999,
+      "status": "Confirmed",
+      "placed_at": "2026-03-15T06:27:30.540717",
+      "delivery_date": "Tue, 17 Mar 2026",
+      "delivery_days": 2,
+      "buyer_location": {
+        "address": "12, Park Street",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "pincode": "600001"
+      }
+    },
+    {
+      "order_id": "BF20260315062732",
+      "user_id": "U001",
+      "product_id": "P001",
+      "product_name": "Apple iPhone 15 128GB Black",
+      "quantity": 1,
+      "price": 69999,
+      "total": 69999,
+      "status": "Confirmed",
+      "placed_at": "2026-03-15T06:27:32.287048",
+      "delivery_date": "Tue, 17 Mar 2026",
+      "delivery_days": 2,
+      "buyer_location": {
+        "address": "12, Park Street",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "pincode": "600001"
+      }
+    }
+  ]
+}

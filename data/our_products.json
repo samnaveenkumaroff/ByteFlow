@@ -1,0 +1,239 @@
+{
+  "store_name": "TechZone India",
+  "last_updated": "2026-03-15T06:43:08.904498",
+  "products": [
+    {
+      "id": "P001",
+      "product_name": "Apple iPhone 15 128GB Black",
+      "search_query": "Apple iPhone 15 128GB",
+      "our_price": 67299,
+      "retail_price": 65280,
+      "original_price": 79900,
+      "discount": 16,
+      "rating": 4.5,
+      "rating_count": 12847,
+      "delivery_days": 3,
+      "stock": 41,
+      "image_url": "https://store.storeimages.cdn-apple.com/iphone15-black.jpg",
+      "category": "Smartphones",
+      "brand": "Apple",
+      "attributes": {
+        "Storage": "128GB",
+        "Color": "Black",
+        "Display": "6.1 inch Super Retina XDR",
+        "Processor": "A16 Bionic",
+        "Camera": "48MP",
+        "Battery": "3349 mAh",
+        "OS": "iOS 17",
+        "Connectivity": "5G"
+      },
+      "title": "Apple iPhone 15 (Black, 128GB) — 48MP Camera, A16 Bionic, USB-C",
+      "description": "Experience the next generation of iPhone with the iPhone 15. Powered by the A16 Bionic chip, it features a stunning 6.1-inch Super Retina XDR display and a 48MP main camera. With USB-C connectivity, Dynamic Island, and 5G support, the iPhone 15 redefines performance and elegance.",
+      "last_checked": "2026-03-15T06:45:49.733517",
+      "alerts": [],
+      "reviews": [
+        {
+          "user": "Rahul M",
+          "rating": 5,
+          "text": "Excellent camera quality, very satisfied",
+          "date": "2025-03-10"
+        },
+        {
+          "user": "Priya S",
+          "rating": 4,
+          "text": "Good phone but battery drains fast",
+          "date": "2025-03-09"
+        },
+        {
+          "user": "Amit K",
+          "rating": 5,
+          "text": "Best iPhone I've used, smooth performance",
+          "date": "2025-03-08"
+        }
+      ]
+    },
+    {
+      "id": "P002",
+      "product_name": "Samsung Galaxy S24 256GB Phantom Black",
+      "search_query": "Samsung Galaxy S24 256GB",
+      "our_price": 74999,
+      "retail_price": 70130,
+      "original_price": 89999,
+      "discount": 20,
+      "rating": 4.3,
+      "rating_count": 8932,
+      "delivery_days": 2,
+      "stock": 28,
+      "image_url": "https://images.samsung.com/galaxys24-black.jpg",
+      "category": "Smartphones",
+      "brand": "Samsung",
+      "attributes": {
+        "Storage": "256GB",
+        "Color": "Phantom Black",
+        "Display": "6.2 inch Dynamic AMOLED 2X",
+        "Processor": "Snapdragon 8 Gen 3",
+        "Camera": "50MP",
+        "Battery": "4000 mAh",
+        "OS": "Android 14",
+        "Connectivity": "5G"
+      },
+      "title": "Samsung Galaxy S24 (Phantom Black, 256GB) — Galaxy AI, 50MP ProVisual Engine",
+      "description": "Meet the Samsung Galaxy S24, a flagship powerhouse featuring Snapdragon 8 Gen 3 and Galaxy AI. With a 6.2-inch Dynamic AMOLED 2X display at 120Hz, a 50MP ProVisual camera system, and 7 years of OS updates, the S24 leads Android in intelligence and performance.",
+      "last_checked": "2026-03-15T02:09:04.224319",
+      "alerts": [],
+      "reviews": [
+        {
+          "user": "Suresh P",
+          "rating": 5,
+          "text": "AI features are game changing",
+          "date": "2025-03-11"
+        },
+        {
+          "user": "Pooja M",
+          "rating": 5,
+          "text": "Brilliant phone, very useful AI assistant",
+          "date": "2025-03-08"
+        }
+      ]
+    },
+    {
+      "id": "P003",
+      "product_name": "OnePlus 12 256GB Flowy Emerald",
+      "search_query": "OnePlus 12 256GB",
+      "our_price": 64299,
+      "retail_price": 60430,
+      "original_price": 69999,
+      "discount": 11,
+      "rating": 4.6,
+      "rating_count": 6541,
+      "delivery_days": 4,
+      "stock": 72,
+      "image_url": "https://image01.oneplus.net/oneplus12-emerald.jpg",
+      "category": "Smartphones",
+      "brand": "OnePlus",
+      "attributes": {
+        "Storage": "256GB",
+        "Color": "Flowy Emerald",
+        "Display": "6.82 inch LTPO AMOLED",
+        "Processor": "Snapdragon 8 Gen 3",
+        "Camera": "50MP Hasselblad",
+        "Battery": "5400 mAh",
+        "OS": "OxygenOS 14",
+        "Connectivity": "5G"
+      },
+      "title": "OnePlus 12 (Flowy Emerald, 256GB) — Hasselblad Camera, 100W SUPERVOOC, 5400mAh",
+      "description": "The OnePlus 12 brings Hasselblad-tuned cameras, a massive 5400mAh battery with 100W SUPERVOOC charging, and Snapdragon 8 Gen 3. Its 6.82-inch LTPO AMOLED display with 120Hz adaptive refresh ensures silky visuals.",
+      "last_checked": "2026-03-15T00:41:55.105110",
+      "alerts": [],
+      "reviews": [
+        {
+          "user": "Akash M",
+          "rating": 5,
+          "text": "Fastest charging I've ever seen",
+          "date": "2025-03-11"
+        },
+        {
+          "user": "Nisha P",
+          "rating": 5,
+          "text": "Value for money flagship",
+          "date": "2025-03-08"
+        }
+      ]
+    },
+    {
+      "id": "P004",
+      "product_name": "Xiaomi 14 Ultra 512GB Black",
+      "search_query": "Xiaomi 14 Ultra 512GB",
+      "our_price": 84799,
+      "retail_price": 81285,
+      "original_price": 99999,
+      "discount": 16,
+      "rating": 4.4,
+      "rating_count": 3214,
+      "delivery_days": 5,
+      "stock": 15,
+      "image_url": "https://i01.appmifile.com/xiaomi14ultra-black.jpg",
+      "category": "Smartphones",
+      "brand": "Xiaomi",
+      "attributes": {
+        "Storage": "512GB",
+        "Color": "Black",
+        "Display": "6.73 inch LTPO AMOLED",
+        "Processor": "Snapdragon 8 Gen 3",
+        "Camera": "50MP Leica",
+        "Battery": "5000 mAh",
+        "OS": "HyperOS",
+        "Connectivity": "5G"
+      },
+      "title": "Xiaomi 14 Ultra (Black, 512GB) — Leica Summilux Quad Camera, 5x Optical Zoom",
+      "description": "The Xiaomi 14 Ultra pushes mobile photography into professional territory with its co-engineered Leica Summilux quad-camera system featuring a 50MP 1-inch-type sensor and 5x optical zoom. Backed by Snapdragon 8 Gen 3 and HyperOS, this 512GB flagship delivers unmatched performance.",
+      "last_checked": "2026-03-15T00:41:55.105135",
+      "alerts": [],
+      "reviews": [
+        {
+          "user": "Praveen K",
+          "rating": 5,
+          "text": "Leica camera is outstanding",
+          "date": "2025-03-11"
+        },
+        {
+          "user": "Gopal R",
+          "rating": 5,
+          "text": "Best camera phone under 1 lakh",
+          "date": "2025-03-09"
+        }
+      ]
+    },
+    {
+      "id": "P13BFBA",
+      "product_name": "Google Pixel 8 Pro 256GB Obsidian 5G",
+      "search_query": "Google Pixel 8 Pro 256GB Obsidian",
+      "our_price": 79299,
+      "retail_price": 76920,
+      "original_price": 107160,
+      "discount": 26,
+      "rating": 4.5,
+      "rating_count": 0,
+      "delivery_days": 2,
+      "stock": 1,
+      "image_url": "",
+      "category": "Smartphones",
+      "brand": "Google",
+      "attributes": {
+        "Storage": "256GB",
+        "Connectivity": "5G"
+      },
+      "title": "Google Pixel 8 Pro 256GB Obsidian 5G",
+      "description": "Experience next-level speed with 5G connectivity and 256GB storage on the sleek Obsidian Google Pixel 8 Pro. Powered by advanced technology, it delivers smooth multitasking and vibrant displays for seamless daily use. A premium choice for users seeking reliability, speed, and style in one device.",
+      "last_checked": "2026-03-15T00:41:55.105163",
+      "alerts": [],
+      "reviews": []
+    },
+    {
+      "id": "P2DC262",
+      "product_name": "Xiaomi 14 Ultra 512GB Black – Unbeatable Performance",
+      "search_query": "Xiaomi 14 Ultra",
+      "our_price": 83799,
+      "retail_price": 81285,
+      "original_price": 99760,
+      "discount": 16,
+      "rating": 4.5,
+      "rating_count": 0,
+      "delivery_days": 2,
+      "stock": 1,
+      "image_url": "",
+      "category": "Smartphones",
+      "brand": "Xiaomi",
+      "attributes": {
+        "Storage": "512GB",
+        "Color": "Black"
+      },
+      "title": "Xiaomi 14 Ultra 512GB Black – Unbeatable Performance",
+      "description": "Power through heavy tasks with Snapdragon 8 Gen 3 chipset and 512GB storage. Capture stunning details with 1英寸大底主摄 and 8K video recording. Premium Black design meets all-day battery life – ultimate value for tech-savvy users.",
+      "last_checked": "2026-03-15T06:43:08.904473",
+      "alerts": [],
+      "reviews": []
+    }
+  ],
+  "last_scanned": "2026-03-15T00:41:55.105164"
+}

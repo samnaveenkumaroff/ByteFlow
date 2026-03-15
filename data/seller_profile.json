@@ -1,0 +1,20 @@
+{
+  "store_name": "TechZone India",
+  "seller_name": "Rajesh Kumar",
+  "email": "seller@techzoneindia.com",
+  "phone": "+91-9876543210",
+  "gstin": "29ABCDE1234F1Z5",
+  "store_location": {
+    "address": "45, MG Road, Indiranagar",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "pincode": "560038",
+    "latitude": 12.9784,
+    "longitude": 77.6408
+  },
+  "warehouse_pincode": "560038",
+  "joined_date": "2023-06-15",
+  "rating": 4.7,
+  "total_sales": 3842,
+  "logo_url": ""
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ByteFlow Mart — Sign In</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#080f1e;--navy-mid:#0c1a35;--navy-card:#101f3a;--navy-raised:#152548;
+  --gold:#c9a84c;--gold-light:#e2c06e;--gold-dim:#7a6028;
+  --text-1:#f0ead6;--text-2:#a8b8d0;--text-3:#5e7498;
+  --green:#27ae60;--red:#e74c3c;--border:rgba(201,168,76,0.14);
+  --radius:10px;--transition:all .22s cubic-bezier(.4,0,.2,1);
+}
+html,body{height:100%;font-family:'Inter',sans-serif;background:var(--navy);color:var(--text-1);}
+body{
+  display:flex;align-items:center;justify-content:center;min-height:100vh;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%,rgba(201,168,76,.07) 0,transparent 60%),
+    radial-gradient(ellipse 40% 30% at 90% 20%,rgba(41,128,185,.05) 0,transparent 50%);
+}
+/* ── card ── */
+.login-wrap{width:100%;max-width:440px;padding:1rem;}
+.card{
+  background:var(--navy-card);border:1px solid var(--border);
+  border-radius:16px;padding:2.4rem 2.2rem;
+  box-shadow:0 24px 60px rgba(0,0,0,.5);
+  animation:fadeUp .5s ease both;
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+/* ── logo ── */
+.logo{text-align:center;margin-bottom:2rem;}
+.logo-icon{font-size:2.6rem;line-height:1;margin-bottom:.4rem;}
+.logo-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;}
+.logo-sub{font-size:.72rem;color:var(--text-3);letter-spacing:2.5px;text-transform:uppercase;margin-top:.2rem;}
+/* ── tabs ── */
+.tabs{display:flex;background:var(--navy-mid);border-radius:10px;padding:4px;
+  border:1px solid var(--border);margin-bottom:1.6rem;gap:4px;}
+.tab{flex:1;text-align:center;padding:.48rem;border-radius:7px;cursor:pointer;
+  font-size:.84rem;font-weight:600;color:var(--text-3);transition:var(--transition);}
+.tab.active{background:var(--navy-raised);color:var(--gold);
+  box-shadow:0 1px 4px rgba(0,0,0,.3);}
+.tab-panel{display:none;animation:fadeIn .25s ease}
+.tab-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+/* ── form ── */
+.field{margin-bottom:1.1rem;}
+.field label{display:block;font-size:.72rem;font-weight:600;color:var(--text-3);
+  text-transform:uppercase;letter-spacing:.5px;margin-bottom:.4rem;}
+.field input{
+  width:100%;background:var(--navy-raised);border:1px solid var(--border);
+  border-radius:8px;padding:.62rem .85rem;color:var(--text-1);font-size:.9rem;
+  font-family:'Inter',sans-serif;transition:var(--transition);outline:none;
+}
+.field input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.15);}
+.field input::placeholder{color:var(--text-3);}
+/* ── button ── */
+.btn{
+  width:100%;padding:.68rem;border:none;border-radius:8px;cursor:pointer;
+  font-weight:700;font-size:.9rem;letter-spacing:.3px;
+  transition:var(--transition);position:relative;overflow:hidden;
+  font-family:'Inter',sans-serif;
+}
+.btn-gold{
+  background:linear-gradient(135deg,#c9a84c,#7a6028);color:#080f1e;
+  box-shadow:0 2px 12px rgba(201,168,76,.25);
+}
+.btn-gold:hover{background:linear-gradient(135deg,#e2c06e,#c9a84c);
+  transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,168,76,.4);}
+.btn:active{transform:translateY(0);}
+/* ripple */
+.btn .ripple{position:absolute;border-radius:50%;pointer-events:none;
+  background:rgba(255,255,255,.25);transform:scale(0);animation:ripple .55s ease-out forwards;}
+@keyframes ripple{to{transform:scale(3.5);opacity:0}}
+/* ── demo card ── */
+.demo-card{background:var(--navy-raised);border:1px solid var(--border);
+  border-radius:10px;padding:1rem 1.1rem;margin-bottom:.75rem;}
+.demo-card-title{font-weight:700;font-size:.88rem;color:var(--gold-light);margin-bottom:.4rem;}
+.demo-card code{background:rgba(201,168,76,.1);color:var(--gold);
+  border-radius:4px;padding:1px 6px;font-size:.82rem;}
+/* ── alert ── */
+.alert{display:none;border-radius:8px;padding:.7rem .9rem;
+  font-size:.84rem;margin-bottom:1rem;border-left:3px solid;}
+.alert.error{background:rgba(231,76,60,.1);border-color:var(--red);color:#f5c6cb;display:block;}
+.alert.success{background:rgba(39,174,96,.1);border-color:var(--green);color:#a9dfbf;display:block;}
+/* ── spinner ── */
+.btn-spinner{display:none;width:16px;height:16px;border:2px solid rgba(0,0,0,.3);
+  border-top-color:#080f1e;border-radius:50%;animation:spin .7s linear infinite;
+  margin:0 auto;}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="login-wrap">
+  <div class="card">
+    <div class="logo">
+      <div class="logo-icon">⚡</div>
+      <div class="logo-title">ByteFlow Mart</div>
+      <div class="logo-sub">Intelligence Platform</div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab active" data-tab="login">🔑 Sign In</div>
+      <div class="tab" data-tab="demo">👤 Demo Accounts</div>
+    </div>
+
+    <!-- Login panel -->
+    <div class="tab-panel active" id="tab-login">
+      <div id="login-alert" class="alert"></div>
+      <div class="field">
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="you@example.com" autocomplete="email">
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Enter your password">
+      </div>
+      <button class="btn btn-gold" id="login-btn" onclick="doLogin()">
+        <span id="btn-text">Sign In →</span>
+        <div class="btn-spinner" id="btn-spinner"></div>
+      </button>
+    </div>
+
+    <!-- Demo panel -->
+    <div class="tab-panel" id="tab-demo">
+      <div class="demo-card">
+        <div class="demo-card-title">🏪 Seller Account</div>
+        <div style="font-size:.82rem;color:var(--text-2);line-height:1.8;">
+          Email: <code>seller@techzoneindia.com</code><br>
+          Password: <code>seller123</code>
+        </div>
+        <button class="btn btn-gold" style="margin-top:.75rem;"
+          onclick="quickFill('seller@techzoneindia.com','seller123')">
+          Use Seller Account
+        </button>
+      </div>
+      <div class="demo-card">
+        <div class="demo-card-title">👤 Customer Account</div>
+        <div style="font-size:.82rem;color:var(--text-2);line-height:1.8;">
+          Email: <code>ananya@example.com</code><br>
+          Password: <code>demo123</code>
+        </div>
+        <button class="btn btn-gold" style="margin-top:.75rem;"
+          onclick="quickFill('ananya@example.com','demo123')">
+          Use Customer Account
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const API = 'http://localhost:8000';
+
+// Tab switching
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab,.tab-panel').forEach(el => el.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+// Ripple
+document.querySelectorAll('.btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    const r = document.createElement('span');
+    r.className = 'ripple';
+    const rect = this.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    r.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX-rect.left-size/2}px;top:${e.clientY-rect.top-size/2}px;`;
+    this.appendChild(r);
+    setTimeout(() => r.remove(), 600);
+  });
+});
+
+// Enter key
+document.getElementById('password').addEventListener('keydown', e => {
+  if (e.key === 'Enter') doLogin();
+});
+
+function quickFill(email, pw) {
+  document.getElementById('email').value = email;
+  document.getElementById('password').value = pw;
+  document.querySelector('[data-tab="login"]').click();
+  setTimeout(doLogin, 200);
+}
+
+async function doLogin() {
+  const email    = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value.trim();
+  const alert_el = document.getElementById('login-alert');
+  const btnText  = document.getElementById('btn-text');
+  const spinner  = document.getElementById('btn-spinner');
+
+  if (!email || !password) {
+    showAlert('Please enter email and password.', 'error');
+    return;
+  }
+
+  btnText.style.display = 'none';
+  spinner.style.display = 'block';
+  alert_el.className = 'alert';
+
+  try {
+    const res  = await fetch(`${API}/api/login`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email, password})
+    });
+    const data = await res.json();
+
+    if (!res.ok) {
+      showAlert(data.detail || 'Invalid credentials.', 'error');
+      return;
+    }
+
+    // Store user in localStorage
+    localStorage.setItem('bf_user', JSON.stringify(data.user));
+
+    // Redirect based on role
+    if (data.user.role === 'seller') {
+      window.location.href = '/seller';
+    } else {
+      window.location.href = '/customer';
+    }
+
+  } catch(err) {
+    showAlert('Cannot connect to server. Make sure python server.py is running.', 'error');
+  } finally {
+    btnText.style.display = 'block';
+    spinner.style.display = 'none';
+  }
+}
+
+function showAlert(msg, type) {
+  const el = document.getElementById('login-alert');
+  el.textContent = msg;
+  el.className = 'alert ' + type;
+}
+
+// If already logged in, redirect
+const stored = localStorage.getItem('bf_user');
+if (stored) {
+  const u = JSON.parse(stored);
+  window.location.href = u.role === 'seller' ? '/seller' : '/customer';
+}
+</script>
+</body>
+</html>

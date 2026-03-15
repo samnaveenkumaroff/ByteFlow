@@ -1,0 +1,1956 @@
+{
+  "source": "multi_platform",
+  "scraped_at": "2025-03-13T09:45:00",
+  "matches": [
+    {
+      "our_product_id": "P001",
+      "our_product_name": "Apple iPhone 15 128GB Black",
+      "our_price": 69999,
+      "our_discount": 12,
+      "our_rating": 4.5,
+      "our_delivery_days": 3,
+      "competitors": [
+        {
+          "platform": "flipkart",
+          "product_name": "Apple iPhone 15 (Black, 128 GB)",
+          "url": "https://www.flipkart.com/apple-iphone-15-black-128-gb/p/itm6ac6485515ae4",
+          "price": 67499,
+          "original_price": 79900,
+          "discount": 16,
+          "rating": 4.6,
+          "rating_count": 28475,
+          "delivery_days": 2,
+          "delivery_text": "Delivery by Tomorrow",
+          "reviews": [
+            {
+              "user": "Flipkart Customer",
+              "rating": 5,
+              "text": "Amazing phone, camera quality is superb. Very happy with the purchase price on Flipkart.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Verified Buyer",
+              "rating": 4,
+              "text": "Good phone but battery drains a bit fast. Overall satisfied with the deal.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "TechFan2024",
+              "rating": 5,
+              "text": "Best smartphone under 70k, the dynamic island feature is really useful daily.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "iPhone User",
+              "rating": 3,
+              "text": "Heating issues noticed when playing games continuously for long hours.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Happy Shopper",
+              "rating": 5,
+              "text": "Excellent product, delivery was super fast. Packaging was very secure.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Mobile Expert",
+              "rating": 4,
+              "text": "Great build quality, the USB-C port is finally here. Worth upgrading.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Budget Buyer",
+              "rating": 2,
+              "text": "For this price no charger in box is really disappointing. Should include.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Photography Fan",
+              "rating": 5,
+              "text": "Camera produces stunning photos in all lighting conditions. Very impressed.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Daily User",
+              "rating": 4,
+              "text": "Smooth performance, no lag at all. iOS experience is very polished.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Value Seeker",
+              "rating": 3,
+              "text": "Good phone but overpriced even at discount. Battery could be much better.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:45:00"
+        },
+        {
+          "platform": "amazon",
+          "product_name": "Apple iPhone 15 (Black, 128GB)",
+          "url": "https://www.amazon.in/Apple-iPhone-15-128GB-Black/dp/B0CHX3TW6X",
+          "price": 68999,
+          "original_price": 79900,
+          "discount": 14,
+          "rating": 4.5,
+          "rating_count": 31250,
+          "delivery_days": 1,
+          "delivery_text": "Get it Tomorrow – Prime Delivery",
+          "reviews": [
+            {
+              "user": "Amazon Prime User",
+              "rating": 5,
+              "text": "Super fast Prime delivery, phone was perfectly sealed and genuine Apple product.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Tech Geek",
+              "rating": 4,
+              "text": "Dynamic Island is a game changer. Battery could be better but camera is great.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "iOS Convert",
+              "rating": 5,
+              "text": "Switched from Android and never looking back. iOS ecosystem is seamless.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Disappointed",
+              "rating": 2,
+              "text": "No charger and no earphones in the box at this price is absolutely unacceptable.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Verified Purchase",
+              "rating": 4,
+              "text": "USB-C upgrade is long overdue but very welcome. Build quality is premium.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Camera Lover",
+              "rating": 5,
+              "text": "Portrait mode and photogenic mode produce professional level shots easily.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Heating Concern",
+              "rating": 3,
+              "text": "Gets warm during gaming and video calls but cools down fairly quickly.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Happy Buyer",
+              "rating": 5,
+              "text": "Amazon easy returns policy gave confidence to buy. Great shopping experience.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Long Term User",
+              "rating": 4,
+              "text": "Two months in and still feels snappy. iOS updates arrive promptly always.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Value Critic",
+              "rating": 3,
+              "text": "Decent phone but competitors offer more features at similar price points.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:46:00"
+        },
+        {
+          "platform": "croma",
+          "product_name": "Apple iPhone 15 128GB – Black",
+          "url": "https://www.croma.com/apple-iphone-15-128gb-black/p/265194",
+          "price": 69990,
+          "original_price": 79900,
+          "discount": 12,
+          "rating": 4.4,
+          "rating_count": 4821,
+          "delivery_days": 3,
+          "delivery_text": "Delivered in 3 Business Days",
+          "reviews": [
+            {
+              "user": "Croma Shopper",
+              "rating": 5,
+              "text": "Bought from Croma for after-sales trust. Staff helped set up device properly.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "First iPhone",
+              "rating": 4,
+              "text": "First Apple device and totally impressed by the quality and smoothness overall.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Store Pickup",
+              "rating": 5,
+              "text": "Ordered online and picked up same day from store. Very convenient service.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "EMI Buyer",
+              "rating": 4,
+              "text": "No-cost EMI option made this affordable. Croma has good financing schemes.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Battery Watcher",
+              "rating": 3,
+              "text": "Battery backup is around 18 hours on moderate use. Expected slightly more.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Display Fan",
+              "rating": 5,
+              "text": "Super Retina XDR display is gorgeous. Colours are very accurate and vivid.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Packaging Issue",
+              "rating": 2,
+              "text": "Box had minor dent on delivery but phone inside was perfectly fine thankfully.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Loyal Croma Customer",
+              "rating": 5,
+              "text": "Croma always delivers genuine products with proper warranty. Very trustworthy.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Tech Savvy",
+              "rating": 4,
+              "text": "A16 Bionic chip keeps everything blazing fast. No slowdowns after two months.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Casual User",
+              "rating": 3,
+              "text": "Good for basic use but Dynamic Island gimmick gets boring after initial days.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:47:00"
+        },
+        {
+          "platform": "reliance_digital",
+          "product_name": "Apple iPhone 15 128GB Black",
+          "url": "https://www.reliancedigital.in/apple-iphone-15-128gb-black/p/493416828",
+          "price": 69900,
+          "original_price": 79900,
+          "discount": 13,
+          "rating": 4.3,
+          "rating_count": 3102,
+          "delivery_days": 3,
+          "delivery_text": "Delivered in 3 Days",
+          "reviews": [
+            {
+              "user": "RD Regular",
+              "rating": 5,
+              "text": "Reliance Digital gave free screen guard installation at store. Great service.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Exchange Deal",
+              "rating": 4,
+              "text": "Got good exchange value for old phone. Overall deal was quite satisfying.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Happy Customer",
+              "rating": 5,
+              "text": "Excellent build quality and camera. Photos in low light are simply outstanding.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Slow Delivery",
+              "rating": 3,
+              "text": "Delivery took 4 days instead of promised 3. Product is good though.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Gift Buyer",
+              "rating": 5,
+              "text": "Bought as gift, packaging was elegant and recipient was absolutely delighted.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "iOS Skeptic",
+              "rating": 3,
+              "text": "Coming from Android it took time adjusting. iOS restrictions feel limiting sometimes.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Performer",
+              "rating": 4,
+              "text": "No throttling even after months of heavy use. Apple optimizes hardware brilliantly.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Service Fan",
+              "rating": 5,
+              "text": "Reliance Digital has excellent post-purchase support. Staff are very knowledgeable.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Price Watcher",
+              "rating": 3,
+              "text": "Price is same as MRP discount. Flipkart and Amazon offer better deals often.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Camera Pro",
+              "rating": 4,
+              "text": "Cinematic mode and Action mode videos are incredibly stabilised and smooth.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:48:00"
+        },
+        {
+          "platform": "vijay_sales",
+          "product_name": "Apple iPhone 15 (Black) 128 GB",
+          "url": "https://www.vijaysales.com/apple-iphone-15-black-128-gb/85641",
+          "price": 68500,
+          "original_price": 79900,
+          "discount": 14,
+          "rating": 4.4,
+          "rating_count": 1875,
+          "delivery_days": 2,
+          "delivery_text": "Delivery in 2 Days",
+          "reviews": [
+            {
+              "user": "VS Loyalist",
+              "rating": 5,
+              "text": "Vijay Sales always provides genuine Apple products with full box and warranty.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Quick Delivery",
+              "rating": 4,
+              "text": "Delivered in just 2 days as promised. Phone was sealed properly and authentic.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Best Deal",
+              "rating": 5,
+              "text": "Got additional bank discount on top. Final price was much lower than elsewhere.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Colour Fan",
+              "rating": 4,
+              "text": "Black colour looks very sleek and premium. Gets fingerprints but looks amazing.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Gaming User",
+              "rating": 3,
+              "text": "Gaming performance is great but phone gets warm after 30 minutes of play.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Selfie Lover",
+              "rating": 5,
+              "text": "Front camera is exceptional. Portrait selfies look absolutely professional quality.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "No Charger Sad",
+              "rating": 2,
+              "text": "Still no charger in 2025 is very annoying. Had to buy separately which cost extra.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Satisfied Buyer",
+              "rating": 5,
+              "text": "Vijay Sales staff explained all features patiently. Superb customer service.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Regular Reviewer",
+              "rating": 4,
+              "text": "Smooth daily driver with great software updates. iOS 17 features are very useful.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Overall Happy",
+              "rating": 4,
+              "text": "Good phone overall, slight premium over online but worth it for in-store experience.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:49:00"
+        }
+      ],
+      "price_difference_min": 68500,
+      "price_difference_max": 69990,
+      "discount_difference": -4,
+      "rating_difference": -0.1,
+      "our_retail_price": 67999
+    },
+    {
+      "our_product_id": "P002",
+      "our_product_name": "Samsung Galaxy S24 256GB Phantom Black",
+      "our_price": 74999,
+      "our_discount": 17,
+      "our_rating": 4.3,
+      "our_delivery_days": 2,
+      "competitors": [
+        {
+          "platform": "flipkart",
+          "product_name": "SAMSUNG Galaxy S24 5G (Onyx Black, 256 GB)",
+          "url": "https://www.flipkart.com/samsung-galaxy-s24-5g-onyx-black-256-gb/p/itm7f7a66a2ff81e",
+          "price": 72999,
+          "original_price": 89999,
+          "discount": 19,
+          "rating": 4.4,
+          "rating_count": 14823,
+          "delivery_days": 2,
+          "delivery_text": "Delivery by Tomorrow",
+          "reviews": [
+            {
+              "user": "GalaxyFan",
+              "rating": 5,
+              "text": "AI Circle to Search feature works brilliantly. Galaxy AI is very helpful daily.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Samsung User",
+              "rating": 4,
+              "text": "Bright display and great performance. Slightly warm during gaming but manageable.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Techie2025",
+              "rating": 5,
+              "text": "7 years of OS updates is the biggest selling point. Future proof smartphone.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Budget Conscious",
+              "rating": 3,
+              "text": "Good phone but Samsung keeps showing ads in One UI. Very annoying behavior.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Power User",
+              "rating": 5,
+              "text": "Excellent performance in every task. Gaming is butter smooth no issues.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Camera Buff",
+              "rating": 4,
+              "text": "100x zoom is incredible. Photos are sharp and detailed in daylight conditions.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Frustrated Buyer",
+              "rating": 2,
+              "text": "Battery drains too fast with 5G on. Had to charge twice daily frustrating.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Happy Customer",
+              "rating": 5,
+              "text": "Best Android phone of 2024. Compact size and powerful performance package.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Design Fan",
+              "rating": 4,
+              "text": "Build quality is top notch, fits perfectly in hand. Premium feel overall.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Regular User",
+              "rating": 3,
+              "text": "Heating issue during video calls is concerning. Samsung needs to fix this.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:48:00"
+        },
+        {
+          "platform": "amazon",
+          "product_name": "Samsung Galaxy S24 5G (Onyx Black, 256GB)",
+          "url": "https://www.amazon.in/Samsung-Galaxy-S24-Onyx-Black/dp/B0CTFZBY9B",
+          "price": 73499,
+          "original_price": 89999,
+          "discount": 18,
+          "rating": 4.3,
+          "rating_count": 16540,
+          "delivery_days": 1,
+          "delivery_text": "Get it Tomorrow – Prime Delivery",
+          "reviews": [
+            {
+              "user": "Prime Buyer",
+              "rating": 5,
+              "text": "Galaxy AI features are extremely useful. Live Translate during calls is brilliant.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Android Fan",
+              "rating": 4,
+              "text": "Smooth performance and vibrant AMOLED display. One UI feels polished and refined.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Future Proof",
+              "rating": 5,
+              "text": "Seven years of updates guarantee makes this a very safe long term investment.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Overheating",
+              "rating": 3,
+              "text": "Heats up noticeably during prolonged gaming sessions. Not ideal for heavy gamers.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Zoom King",
+              "rating": 5,
+              "text": "Space Zoom 50x is phenomenal. Clear shots from very far distance impressively.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Software Critic",
+              "rating": 3,
+              "text": "Ads in Samsung apps are irritating. Should not happen on a premium device.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Compact Fan",
+              "rating": 5,
+              "text": "Perfect compact flagship with no compromise on performance whatsoever.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Battery Life",
+              "rating": 4,
+              "text": "All-day battery easily with moderate use. 25W charging is a bit slow though.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Build Quality",
+              "rating": 4,
+              "text": "Armour Aluminium frame is solid. Glass back feels premium but slippery.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Value Check",
+              "rating": 3,
+              "text": "Good phone but felt OnePlus 12 offers more value at a lower price point.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:49:00"
+        },
+        {
+          "platform": "croma",
+          "product_name": "Samsung Galaxy S24 5G 256GB – Onyx Black",
+          "url": "https://www.croma.com/samsung-galaxy-s24-5g-256gb-onyx-black/p/267834",
+          "price": 74490,
+          "original_price": 89999,
+          "discount": 17,
+          "rating": 4.3,
+          "rating_count": 2940,
+          "delivery_days": 3,
+          "delivery_text": "Delivered in 3 Business Days",
+          "reviews": [
+            {
+              "user": "Croma Buyer",
+              "rating": 5,
+              "text": "Croma gave free Samsung care plus worth 3000 rupees with this purchase amazing.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Display Lover",
+              "rating": 5,
+              "text": "2600 nits peak brightness makes outdoor visibility absolutely excellent clearly.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Exchange Happy",
+              "rating": 4,
+              "text": "Got 12000 exchange value for old S21. Croma exchange program is very good.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "AI Curious",
+              "rating": 4,
+              "text": "Circle to Search and Chat Assist are genuinely useful AI features on phone.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Speed Tester",
+              "rating": 5,
+              "text": "Snapdragon 8 Gen 3 for Galaxy edition benchmarks significantly higher than standard.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Disappointed",
+              "rating": 2,
+              "text": "Croma delivery was delayed by two days. No prior notification was given at all.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Night Photo",
+              "rating": 5,
+              "text": "Nightography mode produces stunning low light shots. Best in Android segment.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "One UI Fan",
+              "rating": 4,
+              "text": "One UI 6.1 is very smooth and feature rich. Samsung software has improved.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Price Concern",
+              "rating": 3,
+              "text": "Croma price is higher than Amazon. Came here for EMI and exchange option only.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Happy Croma",
+              "rating": 4,
+              "text": "Staff helped transfer data from old phone. Service made the purchase worthwhile.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:50:00"
+        },
+        {
+          "platform": "reliance_digital",
+          "product_name": "Samsung Galaxy S24 5G 256GB Onyx Black",
+          "url": "https://www.reliancedigital.in/samsung-galaxy-s24-5g-256gb-onyx-black/p/494521973",
+          "price": 73999,
+          "original_price": 89999,
+          "discount": 18,
+          "rating": 4.2,
+          "rating_count": 1980,
+          "delivery_days": 3,
+          "delivery_text": "Delivered in 3 Days",
+          "reviews": [
+            {
+              "user": "RD Customer",
+              "rating": 4,
+              "text": "Reliance Digital had good festive offers on top of bank card discounts available.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Galaxy AI Tester",
+              "rating": 5,
+              "text": "Generative Edit feature in gallery is incredible. Removes objects seamlessly perfectly.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Compact Flagship",
+              "rating": 5,
+              "text": "Finally a compact phone with no compromises. Every feature is premium level.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Overheating Report",
+              "rating": 2,
+              "text": "Throttles heavily in sustained gaming. Temperature becomes uncomfortably high.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Camera Test",
+              "rating": 4,
+              "text": "Telephoto lens is a massive improvement over Galaxy S23. Much more detailed shots.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Bloatware",
+              "rating": 3,
+              "text": "Too many pre-installed apps, many cannot be uninstalled. Clutters the phone.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Satisfied Buyer",
+              "rating": 5,
+              "text": "Overall a polished premium package. Samsung truly delivers consistent quality.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "EMI Customer",
+              "rating": 4,
+              "text": "Zero cost EMI for 12 months made it easy. Reliance Digital has great finance.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Late Delivery",
+              "rating": 3,
+              "text": "Promised in 2 days but took 4. Customer support response was slow too.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Long Timer",
+              "rating": 4,
+              "text": "Using for 3 months, still as smooth as day one. Samsung reliability proven.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:51:00"
+        },
+        {
+          "platform": "vijay_sales",
+          "product_name": "Samsung Galaxy S24 5G (Onyx Black, 256 GB)",
+          "url": "https://www.vijaysales.com/samsung-galaxy-s24-5g-onyx-black-256-gb/87452",
+          "price": 72499,
+          "original_price": 89999,
+          "discount": 19,
+          "rating": 4.4,
+          "rating_count": 1203,
+          "delivery_days": 2,
+          "delivery_text": "Delivery in 2 Days",
+          "reviews": [
+            {
+              "user": "VS Fan",
+              "rating": 5,
+              "text": "Vijay Sales offered extra discount with HDFC card. Total saving was around 8000.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Best Price",
+              "rating": 5,
+              "text": "Lowest price I found after checking all stores. Very happy with this deal.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Happy Android",
+              "rating": 4,
+              "text": "Galaxy AI makes daily tasks smarter. Note Assist and Transcript Assist are great.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Screen Lover",
+              "rating": 5,
+              "text": "QHD plus AMOLED is the best display I have ever seen on any smartphone.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Battery Check",
+              "rating": 3,
+              "text": "Battery life is average. Competitor phones last longer at similar pricing.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Fast Charge",
+              "rating": 4,
+              "text": "25W wired and 15W wireless charging both work well for daily needs.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Packaging Fine",
+              "rating": 4,
+              "text": "Delivered securely, box intact. Vijay Sales packaging is reliable and careful.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Software Issue",
+              "rating": 2,
+              "text": "Encountered random reboots twice in first week. Seems to be software related issue.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Trusted Store",
+              "rating": 5,
+              "text": "Vijay Sales always provides genuine Samsung products with full 1 year warranty.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Upgrade Happy",
+              "rating": 4,
+              "text": "Upgraded from S22 and difference is noticeable. Galaxy AI features justify upgrade.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:52:00"
+        }
+      ],
+      "price_difference_min": 72499,
+      "price_difference_max": 74490,
+      "discount_difference": -2,
+      "rating_difference": -0.1,
+      "our_retail_price": 67999
+    },
+    {
+      "our_product_id": "P003",
+      "our_product_name": "OnePlus 12 256GB Flowy Emerald",
+      "our_price": 64999,
+      "our_discount": 7,
+      "our_rating": 4.6,
+      "our_delivery_days": 4,
+      "competitors": [
+        {
+          "platform": "flipkart",
+          "product_name": "OnePlus 12 5G (Flowy Emerald, 256 GB)",
+          "url": "https://www.flipkart.com/oneplus-12-5g-flowy-emerald-256-gb/p/itm3d4a6a0d1d9bb",
+          "price": 62999,
+          "original_price": 69999,
+          "discount": 10,
+          "rating": 4.6,
+          "rating_count": 9812,
+          "delivery_days": 3,
+          "delivery_text": "Delivery in 3 Days",
+          "reviews": [
+            {
+              "user": "OnePlus Loyalist",
+              "rating": 5,
+              "text": "100W charging charges from 0 to 100 in just 26 minutes. Incredible technology.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Speed Freak",
+              "rating": 5,
+              "text": "Snapdragon 8 Gen 3 performance is unbelievable. Handles anything smoothly.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Value Hunter",
+              "rating": 4,
+              "text": "Best value flagship in India right now. Hasselblad camera is genuinely excellent.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Disappointed User",
+              "rating": 3,
+              "text": "OxygenOS 14 has too many bloatware apps. Previous versions were much cleaner.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Gaming Pro",
+              "rating": 5,
+              "text": "Zero thermal throttling during BGMI sessions. Consistent performance throughout.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Display Lover",
+              "rating": 5,
+              "text": "2K LTPO display is stunning, 120Hz makes everything silky smooth great.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Battery Expert",
+              "rating": 4,
+              "text": "Battery lasts comfortably through full day heavy usage with 5G enabled.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Camera Enthusiast",
+              "rating": 5,
+              "text": "Night mode is exceptional, rivals phones twice the price. Very happy.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Software Critic",
+              "rating": 2,
+              "text": "Random freezes after latest update, camera app crashes occasionally. Very frustrating.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Satisfied Buyer",
+              "rating": 5,
+              "text": "Build quality feels premium, emerald color looks stunning in sunlight.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:51:00"
+        },
+        {
+          "platform": "amazon",
+          "product_name": "OnePlus 12 5G (Flowy Emerald, 256GB)",
+          "url": "https://www.amazon.in/OnePlus-12-Flowy-Emerald-256GB/dp/B0CS4VQFZK",
+          "price": 63499,
+          "original_price": 69999,
+          "discount": 9,
+          "rating": 4.5,
+          "rating_count": 11230,
+          "delivery_days": 2,
+          "delivery_text": "Get it in 2 Days – Prime Delivery",
+          "reviews": [
+            {
+              "user": "Flagship Killer",
+              "rating": 5,
+              "text": "OnePlus is back with true flagship killer pricing. Nothing comes close in value.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Hasselblad Fan",
+              "rating": 5,
+              "text": "Hasselblad Natural Colour Calibration makes every photo look wonderfully true.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Speed King",
+              "rating": 5,
+              "text": "100W SUPERVOOC fills from dead to full in under 30 minutes consistently.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Software Issues",
+              "rating": 2,
+              "text": "Major bug after March update, apps crash randomly. OnePlus support is slow.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Display Geek",
+              "rating": 5,
+              "text": "2K 120Hz LTPO display is absolutely gorgeous. One of the best screens ever.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Bloat Bothered",
+              "rating": 3,
+              "text": "OxygenOS has too many pre-installed apps now. Earlier builds were much cleaner.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Gaming Beast",
+              "rating": 5,
+              "text": "OnePlus 12 sustained gaming performance is top class. No throttling noticed.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Night Photo",
+              "rating": 4,
+              "text": "Night shots with Hasselblad tuning are impressive. Rivals Google Pixel night mode.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Build Quality",
+              "rating": 4,
+              "text": "Ceramic back with Gorilla Glass Victus 2 feels incredibly premium and solid.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Good Value",
+              "rating": 4,
+              "text": "Better value than Samsung S24 with similar performance. Wise choice overall.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:52:00"
+        },
+        {
+          "platform": "croma",
+          "product_name": "OnePlus 12 5G 256GB – Flowy Emerald",
+          "url": "https://www.croma.com/oneplus-12-5g-256gb-flowy-emerald/p/269201",
+          "price": 64490,
+          "original_price": 69999,
+          "discount": 8,
+          "rating": 4.5,
+          "rating_count": 1540,
+          "delivery_days": 4,
+          "delivery_text": "Delivered in 4 Business Days",
+          "reviews": [
+            {
+              "user": "Croma OnePlus",
+              "rating": 4,
+              "text": "Got extra 2000 off with Axis bank card at Croma. Good additional savings possible.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Emerald Beauty",
+              "rating": 5,
+              "text": "Flowy Emerald colour is absolutely stunning. Gets many compliments from everyone.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Fast Charger",
+              "rating": 5,
+              "text": "100W charger included in box is amazing. No separate purchase needed at all.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Gaming Test",
+              "rating": 5,
+              "text": "Genshin Impact runs on highest settings without any lag or heating issue.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Slow Ship",
+              "rating": 3,
+              "text": "Croma delivery took 5 days instead of 4. Tracking updates were also infrequent.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Wireless Charging",
+              "rating": 4,
+              "text": "50W wireless charging is very fast for a wireless solution. Convenient feature.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Software OK",
+              "rating": 3,
+              "text": "OxygenOS is fine but not as clean as earlier versions. Getting more bloated.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Camera Test",
+              "rating": 5,
+              "text": "Periscope telephoto lens at this price is unmatched. Zoom quality is excellent.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Croma Service",
+              "rating": 4,
+              "text": "Croma gave complimentary screen protection and setup assistance at store pickup.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Daily Driver",
+              "rating": 4,
+              "text": "Smooth daily driver, handles multitasking effortlessly with 16GB RAM variant.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:53:00"
+        },
+        {
+          "platform": "reliance_digital",
+          "product_name": "OnePlus 12 5G 256GB Flowy Emerald",
+          "url": "https://www.reliancedigital.in/oneplus-12-5g-256gb-flowy-emerald/p/495832641",
+          "price": 63999,
+          "original_price": 69999,
+          "discount": 9,
+          "rating": 4.4,
+          "rating_count": 987,
+          "delivery_days": 4,
+          "delivery_text": "Delivered in 4 Days",
+          "reviews": [
+            {
+              "user": "RD Buyer",
+              "rating": 4,
+              "text": "Reliance Digital had instant discount offer on OnePlus. Good overall savings.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Value Pick",
+              "rating": 5,
+              "text": "This phone punches well above its price category in every single benchmark.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Alert Battery",
+              "rating": 4,
+              "text": "5400mAh battery is huge. With 100W charging you never fear running out of charge.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "OnePlus Again",
+              "rating": 5,
+              "text": "My fourth OnePlus phone and the brand keeps consistently improving every time.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Heating Check",
+              "rating": 4,
+              "text": "Slight warmth under heavy load but vapour cooling system handles it effectively.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Disappointed OS",
+              "rating": 2,
+              "text": "OxygenOS is no longer what it used to be. Too much OPPO influence ruining it.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Photo Taker",
+              "rating": 5,
+              "text": "Pro mode with Hasselblad gives manual controls that rival proper camera apps.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Staff Help",
+              "rating": 4,
+              "text": "Reliance staff helped compare it with Samsung S24. Chose OnePlus for value.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Delayed",
+              "rating": 3,
+              "text": "Delivery came on 5th day. Reliance Digital logistics needs improvement urgently.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Solid Buy",
+              "rating": 5,
+              "text": "Best purchase of 2025. Performance, camera and charging trifecta is unbeatable.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:54:00"
+        },
+        {
+          "platform": "vijay_sales",
+          "product_name": "OnePlus 12 5G (Flowy Emerald) 256 GB",
+          "url": "https://www.vijaysales.com/oneplus-12-5g-flowy-emerald-256-gb/89014",
+          "price": 62499,
+          "original_price": 69999,
+          "discount": 11,
+          "rating": 4.6,
+          "rating_count": 734,
+          "delivery_days": 3,
+          "delivery_text": "Delivery in 3 Days",
+          "reviews": [
+            {
+              "user": "Best Deal VS",
+              "rating": 5,
+              "text": "Vijay Sales gave the lowest price among all stores after SBI card discount applied.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Stunning Design",
+              "rating": 5,
+              "text": "Emerald colour with marble-like finish is unlike anything else in the market.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Charge Fan",
+              "rating": 5,
+              "text": "100W charger in the box alone saves 2000 rupees. Very consumer friendly brand.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Gaming Hours",
+              "rating": 4,
+              "text": "Played BGMI for 3 hours straight. Phone stayed cool and performance was stable.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Screen Praise",
+              "rating": 5,
+              "text": "2K curved display with LTPO adaptive refresh is truly a visual treat experience.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "App Crash",
+              "rating": 2,
+              "text": "Camera app crashes after recent update. OnePlus needs to fix this issue fast.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Genuine Store",
+              "rating": 4,
+              "text": "Vijay Sales is reliable. Got genuine sealed product with all accessories included.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Teleshot",
+              "rating": 5,
+              "text": "3x periscope telephoto gives remarkable zoom quality. Rivals much pricier phones.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "OS Neutral",
+              "rating": 3,
+              "text": "OxygenOS is decent but lacks the rawness of earlier versions. Acceptable though.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Happy Upgrade",
+              "rating": 4,
+              "text": "Upgraded from OnePlus 9 Pro. The leap in performance and camera is massive.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:55:00"
+        }
+      ],
+      "price_difference_min": 62499,
+      "price_difference_max": 64490,
+      "discount_difference": -3,
+      "rating_difference": 0.0,
+      "our_retail_price": 67999
+    },
+    {
+      "our_product_id": "P004",
+      "our_product_name": "Xiaomi 14 Ultra 512GB Black",
+      "our_price": 89999,
+      "our_discount": 10,
+      "our_rating": 4.4,
+      "our_delivery_days": 5,
+      "competitors": [
+        {
+          "platform": "flipkart",
+          "product_name": "Xiaomi 14 Ultra 5G (Black, 512 GB)",
+          "url": "https://www.flipkart.com/xiaomi-14-ultra-5g-black-512-gb/p/itm2d5f8e1f4f2b3",
+          "price": 84999,
+          "original_price": 99999,
+          "discount": 15,
+          "rating": 4.3,
+          "rating_count": 2847,
+          "delivery_days": 4,
+          "delivery_text": "Delivery in 4 Days",
+          "reviews": [
+            {
+              "user": "Leica Fan",
+              "rating": 5,
+              "text": "Leica lenses produce professional quality photographs. Worth every single rupee.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Pro Photographer",
+              "rating": 5,
+              "text": "Variable aperture lens is genius. Bokeh quality rivals DSLR cameras impressively.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Tech Reviewer",
+              "rating": 4,
+              "text": "Best camera phone in India hands down. Only issue is MIUI bloatware unfortunately.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Heat Complaint",
+              "rating": 2,
+              "text": "Phone becomes extremely hot during 4K recording. Burns hand literally. Bad.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Spec Monster",
+              "rating": 5,
+              "text": "Snapdragon 8 Gen 3 paired with massive cooling system. Peak performance always.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Disappointed Fan",
+              "rating": 3,
+              "text": "MIUI 15 has too many ads in stock apps. Needs clean Android badly.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Video Creator",
+              "rating": 5,
+              "text": "8K video recording is cinema quality. Color science from Leica is outstanding.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Battery Watcher",
+              "rating": 3,
+              "text": "5000mAh battery drains in one day with heavy camera use. Expected better.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Build Fan",
+              "rating": 5,
+              "text": "Ceramic back and titanium frame feels ultra premium. No flex at all.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Regular Buyer",
+              "rating": 4,
+              "text": "Delivery took longer than expected but product quality is undeniably excellent.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:54:00"
+        },
+        {
+          "platform": "amazon",
+          "product_name": "Xiaomi 14 Ultra 5G (Black, 512GB)",
+          "url": "https://www.amazon.in/Xiaomi-14-Ultra-Black-512GB/dp/B0CXYZ1234",
+          "price": 85999,
+          "original_price": 99999,
+          "discount": 14,
+          "rating": 4.2,
+          "rating_count": 3105,
+          "delivery_days": 3,
+          "delivery_text": "Get it in 3 Days",
+          "reviews": [
+            {
+              "user": "Camera First",
+              "rating": 5,
+              "text": "Leica quad camera setup is unmatched anywhere at any price. Breathtaking photography.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Video Pro",
+              "rating": 5,
+              "text": "Log video recording in HyperOS is fantastic for post-processing coloured grading.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Too Hot",
+              "rating": 2,
+              "text": "4K 60fps video causes severe overheating within 10 minutes. Serious concern.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "MIUI Hater",
+              "rating": 3,
+              "text": "HyperOS still has ads everywhere. Xiaomi must stop this on premium devices.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "RAM King",
+              "rating": 5,
+              "text": "16GB RAM means zero app reloads ever. Background app management is flawless.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Zoom Test",
+              "rating": 5,
+              "text": "5x optical zoom and periscope lens give spectacular detailed long-range shots.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Charge Speed",
+              "rating": 4,
+              "text": "90W HyperCharge fills up so quickly. Takes just 37 minutes for full charge.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Heavy Phone",
+              "rating": 3,
+              "text": "At 229 grams this phone is quite heavy for one-handed use daily.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Build Praise",
+              "rating": 5,
+              "text": "Nano-tech ceramic back is class-leading. Feels like no other phone in hand.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Value Check",
+              "rating": 3,
+              "text": "Excellent camera but software let-down makes it hard to fully recommend this.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:55:00"
+        },
+        {
+          "platform": "croma",
+          "product_name": "Xiaomi 14 Ultra 5G 512GB – Black",
+          "url": "https://www.croma.com/xiaomi-14-ultra-5g-512gb-black/p/271048",
+          "price": 87990,
+          "original_price": 99999,
+          "discount": 12,
+          "rating": 4.3,
+          "rating_count": 810,
+          "delivery_days": 5,
+          "delivery_text": "Delivered in 5 Business Days",
+          "reviews": [
+            {
+              "user": "Croma Premium",
+              "rating": 5,
+              "text": "Croma had photography kit bundle offer with this. Extra lenses were very valuable.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Flagship King",
+              "rating": 5,
+              "text": "Nothing else on the market matches Xiaomi 14 Ultra in pure camera department.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Colour Science",
+              "rating": 5,
+              "text": "Leica Authentic and Leica Vibrant modes produce cinematically beautiful photos.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Thermal Issue",
+              "rating": 2,
+              "text": "Sustained camera use leads to thermal shutdown. Xiaomi must improve cooling system.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "HyperOS Test",
+              "rating": 3,
+              "text": "HyperOS is cleaner than MIUI but still has bloatware and unwanted advertisements.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Delivery Delay",
+              "rating": 3,
+              "text": "Delivery took 7 days instead of 5. Croma logistics is slow for premium products.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Aperture Nerd",
+              "rating": 5,
+              "text": "Variable f1.42 to f4.0 aperture changes photography possibilities completely.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Display Fan",
+              "rating": 4,
+              "text": "6.73 inch WQHD plus LTPO AMOLED is stunning. Peak 3000 nits is blinding outdoors.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "EMI Friendly",
+              "rating": 4,
+              "text": "No-cost EMI made this ultra-premium phone accessible. Croma finance is great.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Niche Pick",
+              "rating": 4,
+              "text": "If camera is your primary need this is the only phone you should consider buying.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:56:00"
+        },
+        {
+          "platform": "reliance_digital",
+          "product_name": "Xiaomi 14 Ultra 5G 512GB Black",
+          "url": "https://www.reliancedigital.in/xiaomi-14-ultra-5g-512gb-black/p/496941234",
+          "price": 86499,
+          "original_price": 99999,
+          "discount": 14,
+          "rating": 4.1,
+          "rating_count": 624,
+          "delivery_days": 5,
+          "delivery_text": "Delivered in 5 Days",
+          "reviews": [
+            {
+              "user": "RD Xiaomi",
+              "rating": 4,
+              "text": "Reliance Digital had launch offer with free Xiaomi buds. Good combo deal value.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Camera Beast",
+              "rating": 5,
+              "text": "Hands down the best camera smartphone ever made. Leica collaboration is brilliant.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Software Problem",
+              "rating": 2,
+              "text": "HyperOS freezes occasionally. Paid this much and getting such bugs is unacceptable.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Storage King",
+              "rating": 5,
+              "text": "512GB UFS 4.0 storage means lightning-fast transfers and infinite media storage.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Heat Alert",
+              "rating": 3,
+              "text": "Warm during gaming and camera use. Not a deal-breaker but noticeable enough.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Charge Impressed",
+              "rating": 5,
+              "text": "90W wired and 80W wireless charging together are the fastest in industry worldwide.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Niche Phone",
+              "rating": 4,
+              "text": "This phone is for photography enthusiasts specifically. Not a mainstream device.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Slow Delivery",
+              "rating": 3,
+              "text": "Waited 7 days instead of 5. Reliance Digital needs better courier partnerships.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Leica Lover",
+              "rating": 5,
+              "text": "Leica watercolour and Leica master filter modes are creative and very impressive.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Worth It",
+              "rating": 4,
+              "text": "Expensive but justifiable if camera quality is your primary purchase criterion.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:57:00"
+        },
+        {
+          "platform": "vijay_sales",
+          "product_name": "Xiaomi 14 Ultra 5G (Black) 512 GB",
+          "url": "https://www.vijaysales.com/xiaomi-14-ultra-5g-black-512-gb/90321",
+          "price": 83999,
+          "original_price": 99999,
+          "discount": 16,
+          "rating": 4.3,
+          "rating_count": 412,
+          "delivery_days": 4,
+          "delivery_text": "Delivery in 4 Days",
+          "reviews": [
+            {
+              "user": "VS Best Price",
+              "rating": 5,
+              "text": "Best price on Xiaomi 14 Ultra found after comparing 6 different online stores.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Photo Master",
+              "rating": 5,
+              "text": "Bought purely for photography. Every single shot looks like a professional photo.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Packaging Good",
+              "rating": 4,
+              "text": "Vijay Sales packed the device very safely. Arrived in perfect condition thankfully.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Heavy Concern",
+              "rating": 3,
+              "text": "229 grams feels very heavy for prolonged one-handed use. Gets tiring quickly.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Snap 8G3",
+              "rating": 5,
+              "text": "Snapdragon 8 Gen 3 paired with 16GB RAM is absolutely overkill in best way.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Video Beast",
+              "rating": 5,
+              "text": "8K video with Leica natural colour science is what every filmmaker dreams of.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "HyperOS",
+              "rating": 3,
+              "text": "HyperOS improvement over MIUI is minimal. Ads in apps still present and annoying.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Ceramic Fan",
+              "rating": 5,
+              "text": "Ceramic glass back is uniquely premium. Scratches less and feels luxurious.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Battery Moderate",
+              "rating": 3,
+              "text": "Heavy camera use drains battery fast. Carry charger if shooting for full day.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Camera Junkie",
+              "rating": 5,
+              "text": "Bought this solely for the Leica periscope lens. Absolutely worth every rupee.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:58:00"
+        }
+      ],
+      "price_difference_min": 83999,
+      "price_difference_max": 87990,
+      "discount_difference": -5,
+      "rating_difference": 0.1,
+      "our_retail_price": 67999
+    },
+    {
+      "our_product_id": "P005",
+      "our_product_name": "Google Pixel 8 Pro 256GB Obsidian",
+      "our_price": 84999,
+      "our_discount": 21,
+      "our_rating": 4.2,
+      "our_delivery_days": 2,
+      "competitors": [
+        {
+          "platform": "flipkart",
+          "product_name": "Google Pixel 8 Pro (Obsidian, 256 GB)",
+          "url": "https://www.flipkart.com/google-pixel-8-pro-obsidian-256-gb/p/itm4a8d6c9f3g4e5",
+          "price": 79999,
+          "original_price": 106999,
+          "discount": 25,
+          "rating": 4.3,
+          "rating_count": 5234,
+          "delivery_days": 2,
+          "delivery_text": "Delivery by Tomorrow",
+          "reviews": [
+            {
+              "user": "Android Purist",
+              "rating": 5,
+              "text": "Clean stock Android with 7 years of guaranteed updates. Perfect long term phone.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Pixel Fan",
+              "rating": 5,
+              "text": "AI features like Best Take and Magic Eraser are genuinely useful daily tools.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Night Shooter",
+              "rating": 5,
+              "text": "Astrophotography mode captures stars clearly. Night Sight is best in class.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Overheating Issue",
+              "rating": 2,
+              "text": "Serious overheating problem even on normal usage. Google needs fix immediately.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Screen Issue",
+              "rating": 3,
+              "text": "Green tint visible at low brightness. Known issue Google acknowledged but not fixed.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Happy Pixel User",
+              "rating": 5,
+              "text": "Call screening feature saves from spam daily. Tensor G3 chip is very capable.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Value Analyst",
+              "rating": 4,
+              "text": "Great deal at this discounted price. Normally overpriced but Flipkart sale helps.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Service Worried",
+              "rating": 3,
+              "text": "Only 2 service centers in my city. Parts availability is poor ongoing concern.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Battery Checker",
+              "rating": 4,
+              "text": "Adaptive battery feature learns usage well. Usually lasts full day comfortably.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Satisfied Flipkart Buyer",
+              "rating": 5,
+              "text": "Price drop made this irresistible. Best value flagship available right now.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:57:00"
+        },
+        {
+          "platform": "amazon",
+          "product_name": "Google Pixel 8 Pro (Obsidian, 256GB)",
+          "url": "https://www.amazon.in/Google-Pixel-8-Pro-Obsidian/dp/B0CGX4J2BF",
+          "price": 81499,
+          "original_price": 106999,
+          "discount": 24,
+          "rating": 4.2,
+          "rating_count": 6870,
+          "delivery_days": 1,
+          "delivery_text": "Get it Tomorrow – Prime Delivery",
+          "reviews": [
+            {
+              "user": "AI Lover",
+              "rating": 5,
+              "text": "Gemini AI integration in Pixel 8 Pro is far ahead of any competitor phone today.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Update First",
+              "rating": 5,
+              "text": "Guaranteed Android updates for 7 years means this phone will last very long.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Tensor G3",
+              "rating": 4,
+              "text": "Tensor G3 chip handles AI tasks brilliantly but lags behind in gaming benchmarks.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Overheating",
+              "rating": 2,
+              "text": "Device heats up even during WhatsApp video calls. Thermal management is poor.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Night Photo",
+              "rating": 5,
+              "text": "Night Sight 2.0 and astrophotography are unmatched by any Android phone today.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Green Tint",
+              "rating": 3,
+              "text": "Green tint at low brightness is a hardware flaw. Affects nighttime viewing badly.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Screen Fan",
+              "rating": 4,
+              "text": "LTPO OLED with 1-120Hz adaptive refresh is super smooth and battery efficient.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Service Gap",
+              "rating": 3,
+              "text": "Service centers are very limited across India. Google must expand reach urgently.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Prime Fan",
+              "rating": 5,
+              "text": "Amazon Prime delivery of sealed unit next day. Unboxing experience was premium.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Pixel Convert",
+              "rating": 4,
+              "text": "Switched from iPhone and the camera AI features genuinely surprised me pleasantly.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:58:00"
+        },
+        {
+          "platform": "croma",
+          "product_name": "Google Pixel 8 Pro 256GB – Obsidian",
+          "url": "https://www.croma.com/google-pixel-8-pro-256gb-obsidian/p/272589",
+          "price": 82990,
+          "original_price": 106999,
+          "discount": 22,
+          "rating": 4.1,
+          "rating_count": 921,
+          "delivery_days": 3,
+          "delivery_text": "Delivered in 3 Business Days",
+          "reviews": [
+            {
+              "user": "Croma Pixel",
+              "rating": 4,
+              "text": "Croma staff helped compare with iPhone 15. Pixel camera AI won hands down.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Clean Android",
+              "rating": 5,
+              "text": "Pixel experience is pure and clean. No bloat, no ads, no unnecessary pre-installs.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Photo Test",
+              "rating": 5,
+              "text": "Best Take and Photo Unblur features save many photos from being deleted forever.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Heat Problem",
+              "rating": 2,
+              "text": "Chronic overheating issue is well documented. Google has not fixed it yet sadly.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Thermometer",
+              "rating": 4,
+              "text": "Body temperature sensor is a unique practical feature not found elsewhere.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Tint Issue",
+              "rating": 3,
+              "text": "Green tint under low brightness is distracting while reading in dark environment.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "EMI Croma",
+              "rating": 4,
+              "text": "Got zero cost 18 month EMI from Croma with Bajaj Finance. Very good option.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Software Win",
+              "rating": 5,
+              "text": "Google Assistant and Gemini AI integration make this smarter than any rival.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Price High",
+              "rating": 3,
+              "text": "Croma price is higher than Flipkart. Came only for in-store demo and EMI options.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Long Haul",
+              "rating": 4,
+              "text": "7 years of updates means Pixel 8 Pro will be relevant until 2031. Smart buy.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T09:59:00"
+        },
+        {
+          "platform": "reliance_digital",
+          "product_name": "Google Pixel 8 Pro 256GB Obsidian",
+          "url": "https://www.reliancedigital.in/google-pixel-8-pro-256gb-obsidian/p/497053789",
+          "price": 81999,
+          "original_price": 106999,
+          "discount": 23,
+          "rating": 4.0,
+          "rating_count": 678,
+          "delivery_days": 3,
+          "delivery_text": "Delivered in 3 Days",
+          "reviews": [
+            {
+              "user": "RD Pixel",
+              "rating": 4,
+              "text": "Reliance Digital had launch event demo. Convinced me to buy Pixel over Samsung.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "AI Magic",
+              "rating": 5,
+              "text": "Magic Eraser and Magic Audio Eraser together make post-processing effortless.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Tensor Concern",
+              "rating": 3,
+              "text": "Tensor G3 runs warm during sustained usage. Better than G2 but still needs work.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Low Service",
+              "rating": 2,
+              "text": "Nearest Google service center is 80 km away. This is a serious concern for me.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "OLED Beauty",
+              "rating": 5,
+              "text": "2000 nits peak brightness OLED panel makes outdoor visibility exceptional always.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Feature Rich",
+              "rating": 5,
+              "text": "Pro controls, Audio Magic Eraser and VoiceMatch make this a truly smart device.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Battery Good",
+              "rating": 4,
+              "text": "Adaptive Battery AI extends daily battery life noticeably after learning habits.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Green Tint",
+              "rating": 3,
+              "text": "The well-known green tint issue at low brightness affects night time reading badly.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Late Ship",
+              "rating": 3,
+              "text": "Delivery came day 4 despite 3-day promise. Product fine but logistics unreliable.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "Pure Android",
+              "rating": 5,
+              "text": "Monthly security patches arrive day one on Pixel. Unbeatable software experience.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T10:00:00"
+        },
+        {
+          "platform": "vijay_sales",
+          "product_name": "Google Pixel 8 Pro (Obsidian) 256 GB",
+          "url": "https://www.vijaysales.com/google-pixel-8-pro-obsidian-256-gb/91247",
+          "price": 79499,
+          "original_price": 106999,
+          "discount": 26,
+          "rating": 4.2,
+          "rating_count": 389,
+          "delivery_days": 2,
+          "delivery_text": "Delivery in 2 Days",
+          "reviews": [
+            {
+              "user": "VS Great Deal",
+              "rating": 5,
+              "text": "Vijay Sales gave highest discount on Pixel 8 Pro. Best price guarantee matched.",
+              "date": "13 Mar, 2025"
+            },
+            {
+              "user": "Night Cam",
+              "rating": 5,
+              "text": "Astrophotography mode actually works in cities with moderate light pollution too.",
+              "date": "12 Mar, 2025"
+            },
+            {
+              "user": "Fast Ship",
+              "rating": 4,
+              "text": "Delivered in exactly 2 days as promised. Very reliable on-time delivery service.",
+              "date": "11 Mar, 2025"
+            },
+            {
+              "user": "Thermal Alert",
+              "rating": 2,
+              "text": "Phone throttles heavily after 15 minutes of gaming. Tensor G3 thermal issue.",
+              "date": "10 Mar, 2025"
+            },
+            {
+              "user": "Pixel Believer",
+              "rating": 5,
+              "text": "Camera Pixel with AI is a category unto itself. No one else does this well.",
+              "date": "09 Mar, 2025"
+            },
+            {
+              "user": "Screen Tint",
+              "rating": 3,
+              "text": "Green screen tint is a hardware defect present across all units. Unresolved issue.",
+              "date": "08 Mar, 2025"
+            },
+            {
+              "user": "Stock Android",
+              "rating": 5,
+              "text": "Clean Android 14 with zero bloatware is the most refreshing experience in phones.",
+              "date": "07 Mar, 2025"
+            },
+            {
+              "user": "Service Gap",
+              "rating": 3,
+              "text": "Limited Pixel service centers across India make post-purchase support difficult.",
+              "date": "06 Mar, 2025"
+            },
+            {
+              "user": "Zoom Check",
+              "rating": 4,
+              "text": "5x optical zoom and Super Res Zoom together cover all telephoto needs perfectly.",
+              "date": "05 Mar, 2025"
+            },
+            {
+              "user": "AI Fan",
+              "rating": 5,
+              "text": "Gemini integration and Pixel exclusive AI features justify buying this over rivals.",
+              "date": "04 Mar, 2025"
+            }
+          ],
+          "scraped_at": "2025-03-13T10:01:00"
+        }
+      ],
+      "price_difference_min": 79499,
+      "price_difference_max": 82990,
+      "discount_difference": -4,
+      "rating_difference": -0.1,
+      "our_retail_price": 67999
+    }
+  ]
+}
