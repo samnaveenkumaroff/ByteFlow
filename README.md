@@ -353,7 +353,7 @@ POST /api/strategy/reset	Restore original data
 
 Total: 250 real review samples
 
-📄 License
+##📄 License
 
 CIT License — free for academic and commercial use.
 
