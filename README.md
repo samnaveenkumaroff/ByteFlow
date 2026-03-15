@@ -256,7 +256,7 @@ Total: **250 real review samples**
 
 ## License
 
-MIT License — free for academic and commercial use.
+CIT License — free for academic and commercial use.
 
 ---
 
