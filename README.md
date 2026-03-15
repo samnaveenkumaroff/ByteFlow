@@ -10,4 +10,4 @@ lacks the autonomous reasoning to connect disparate signals—like a
 specific material complaint in a reviewto a pricing drop in a
 rival'scatalog. This creates a strategic blind spot that requiresan
 agentic layerto independently monitor,synthesize, and proactively
-suggest pivot strategies before market opportunities evaporate.
+suggest pivot strategies before market opportunities evaporate..
