@@ -1,6 +1,6 @@
 # ⚡ ByteFlow Mart PriceRadar🧠 Agentic Competitive Intelligence for Indian E-Commerce
 
-> **ByteFlow Mart** · Problem Statement **PS D-3**
+> **ByteFlow Mart** ·
 Sellers have hit a competitive intelligence wall where the sheer
 velocity of cross-platform pricing shifts, sentiment nuances in
 thousands of reviews, and shifting competitor tactics has outpaced
