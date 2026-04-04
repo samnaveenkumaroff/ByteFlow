@@ -347,9 +347,18 @@ Endpoint	Description
 GET /api/strategy/data	Market dataset
 POST /api/strategy/apply-all	Apply optimizations
 POST /api/strategy/reset	Restore original data
-📊 Dataset
 
-5 flagship smartphones × 5 platforms × 10 reviews each
+<div align="center">
+
+**Sam Naveenkumar V**
+
+[![Email](https://img.shields.io/badge/Email-samnaveenkumaroff%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:samnaveenkumaroff@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-samnaveenkumaroff-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/samnaveenkumaroff/)
+[![GitHub](https://img.shields.io/badge/GitHub-samnaveenkumaroff-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/samnaveenkumaroff)
+[![Medium](https://img.shields.io/badge/Medium-samnaveenkumaroff-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@samnaveenkumaroff)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Projects-FF6B35?style=for-the-badge&logo=github&logoColor=white)](https://github.com/samnaveenkumaroff)
+
+</div>
 
 Total: 250 real review samples
 
@@ -357,4 +366,3 @@ Total: 250 real review samples
 
 CIT License — free for academic and commercial use.
 
-<p align="center"> ⚡ Built for PS D-3 · PriceRadar by ByteFlow Mart </p> ```
