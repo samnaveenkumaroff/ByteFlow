@@ -11,7 +11,6 @@ rival'scatalog. This creates a strategic blind spot that requiresan
 agentic layerto independently monitor,synthesize, and proactively
 suggest pivot strategies before market opportunities evaporate.
 <p align="center">
-  <img src="https://img.shields.io/badge/PS-D_3-FFD700?style=for-the-badge&labelColor=0d1117" />
   <img src="https://img.shields.io/badge/LLM-Qwen3--8B--Instruct-7C3AED?style=for-the-badge&labelColor=0d1117" />
   <img src="https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi&labelColor=0d1117" />
   <img src="https://img.shields.io/badge/Scraping-Playwright-2EAD33?style=for-the-badge&logo=playwright&labelColor=0d1117" />
@@ -42,7 +41,7 @@ It autonomously monitors competitor listings across major marketplaces, analyzes
 
 ## 📋 Table of Contents
 
-- [Problem Statement — PS D-3](#problem-statement--ps-d-3)
+- [Problem Statement](#problem-statement)
 - [What Is PriceRadar?](#what-is-priceradar)
 - [Full Workflow](#full-workflow)
 - [System Architecture](#system-architecture)
@@ -59,7 +58,7 @@ It autonomously monitors competitor listings across major marketplaces, analyzes
 
 ---
 
-## Problem Statement — PS D-3
+## Problem Statement
 
 Sellers have hit a **competitive intelligence wall** where the velocity of cross-platform price changes, delivery competition, discount wars, and sentiment signals has exceeded human analytical capacity.
 
